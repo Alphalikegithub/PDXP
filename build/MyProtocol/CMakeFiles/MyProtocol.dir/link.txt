@@ -1,0 +1,1 @@
+/usr/bin/g++  -g  -rdynamic CMakeFiles/MyProtocol.dir/MyProtocol.cpp.o CMakeFiles/MyProtocol.dir/jsoncpp/jsoncpp.cpp.o  -o MyProtocol 

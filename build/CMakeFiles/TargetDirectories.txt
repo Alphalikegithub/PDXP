@@ -1,0 +1,8 @@
+/root/PDXP/build/CMakeFiles/rebuild_cache.dir
+/root/PDXP/build/CMakeFiles/edit_cache.dir
+/root/PDXP/build/bigCheck/CMakeFiles/rebuild_cache.dir
+/root/PDXP/build/bigCheck/CMakeFiles/bigCheck.dir
+/root/PDXP/build/bigCheck/CMakeFiles/edit_cache.dir
+/root/PDXP/build/MyProtocol/CMakeFiles/rebuild_cache.dir
+/root/PDXP/build/MyProtocol/CMakeFiles/MyProtocol.dir
+/root/PDXP/build/MyProtocol/CMakeFiles/edit_cache.dir

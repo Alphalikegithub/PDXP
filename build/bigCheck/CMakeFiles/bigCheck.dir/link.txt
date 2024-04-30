@@ -1,0 +1,1 @@
+/usr/bin/g++  -g  -rdynamic CMakeFiles/bigCheck.dir/bigCheck.cpp.o  -o bigCheck 
