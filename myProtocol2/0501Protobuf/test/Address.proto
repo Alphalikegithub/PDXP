@@ -1,8 +1,0 @@
-syntax = "proto3";
-package Joker;
-
-message Address
-{
-    int32 num = 1;
-    bytes addr = 2;
-}
