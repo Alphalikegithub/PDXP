@@ -29,14 +29,6 @@ typedef enum MyProtoParserStatus
 /*
     协议头
  */
-
-/* struct MyProtoHead
-{
-    uint8_t version;    //协议版本号
-    uint8_t magic;      //协议魔数
-    uint16_t server;    //协议复用的服务号，标识协议之上的不同服务
-    uint32_t len;       //协议长度（协议头长度+变长json协议体长度）
-}; */
 struct MyProtoHead
 {
     uint8_t  VER;           // 版本号：1字节
@@ -87,22 +79,6 @@ private:
     void headEncode(uint8_t * pData, MyProtoMsg * pMsg);
 };
 
-/* 
-void MyProtoEnCode::headEncode(uint8_t * pData, MyProtoMsg * pMsg)
-{
-    //设置协议头版本号为1
-    *pData = 1; 
-    ++pData;
-    //设置协议头魔数
-    *pData = MY_PROTO_MAGIC;
-    ++pData;
-    //设置协议服务号，把head.server本地字节序转换为网络字节序
-    *(uint16_t *)pData = htons(pMsg->head.server);
-    pData += 2;
-    //设置协议总长度，把head.len本地字节序转换为网络字节序
-    *(uint32_t *)pData = htonl(pMsg->head.len);
-}
-*/
 
 void MyProtoEnCode::headEncode(uint8_t * pData, MyProtoMsg * pMsg)
 {
@@ -130,45 +106,6 @@ void MyProtoEnCode::headEncode(uint8_t * pData, MyProtoMsg * pMsg)
     pData += 4;
     *(uint16_t *)pData = htons(pMsg->head.LEN);
 }
-
-/* 
-uint8_t * MyProtoEnCode::encode(MyProtoMsg * pMsg, uint32_t & len)
-{
-    uint8_t * pData = NULL;
-    Json::FastWriter fWriter;
-    //协议json体序列化
-    string bodyStr = fWriter.write(pMsg->body);
-    //计算协议消息序列化后的总长度
-    len = MY_PROTO_HEAD_SIZE + (uint32_t)bodyStr.size();
-    pMsg->head.len = len;
-    //申请协议消息序列化需要的空间
-    pData = new uint8_t[len];
-    //打包协议头
-    headEncode(pData, pMsg);
-    //打包协议体
-    memcpy(pData + MY_PROTO_HEAD_SIZE, bodyStr.data(), bodyStr.size());
-    return pData;
-}
-*/
-/* 
-uint8_t * MyProtoEnCode::encode(MyProtoMsg * pMsg, uint32_t & len)
-{
-    uint8_t * pData = NULL;
-    Json::FastWriter fWriter;
-    //协议json体序列化
-    string bodyStr = fWriter.write(pMsg->body);
-    //计算协议消息序列化后的总长度
-    len = MY_PROTO_HEAD_SIZE + (uint32_t)bodyStr.size();
-    pMsg->head.LEN = (uint16_t)bodyStr.size();
-    //申请协议消息序列化需要的空间
-    pData = new uint8_t[len];
-    //打包协议头
-    headEncode(pData, pMsg);
-    //打包协议体
-    memcpy(pData + MY_PROTO_HEAD_SIZE, bodyStr.data(), bodyStr.size());
-    return pData;
-}
- */
 
 uint8_t* MyProtoEnCode::encode(MyProtoMsg* pMsg, uint32_t& len)
 {
@@ -239,47 +176,6 @@ void MyProtoDeCode::clear()
         mMsgQ.pop();
     }
 }
-
-/* 
-bool MyProtoDeCode::parserHead(uint8_t ** curData, uint32_t & curLen, 
-    uint32_t & parserLen, bool & parserBreak)
-{
-    parserBreak = false;
-    if (curLen < MY_PROTO_HEAD_SIZE)
-    {
-        parserBreak = true; //终止解析
-        return true;
-    }
-    uint8_t * pData = *curData;
-    //解析版本号
-    mCurMsg.head.version = *pData;
-    pData++;
-    //解析魔数
-    mCurMsg.head.magic = *pData;
-    pData++;
-    //魔数不一致，则返回解析失败
-    if (MY_PROTO_MAGIC != mCurMsg.head.magic)
-    {
-        return false;
-    }
-    //解析服务号
-    mCurMsg.head.server = ntohs(*(uint16_t*)pData);
-    pData+=2;
-    //解析协议消息体的长度
-    mCurMsg.head.len = ntohl(*(uint32_t*)pData);
-    //异常大包，则返回解析失败
-    if (mCurMsg.head.len > MY_PROTO_MAX_SIZE)
-    {
-        return false;
-    }
-    //解析指针向前移动MY_PROTO_HEAD_SIZE字节
-    (*curData) += MY_PROTO_HEAD_SIZE;
-    curLen -= MY_PROTO_HEAD_SIZE;
-    parserLen += MY_PROTO_HEAD_SIZE;
-    mCurParserStatus = ON_PARSER_HAED;
-    return true;
-}
- */
 
 bool MyProtoDeCode::parserHead(uint8_t ** curData, uint32_t & curLen, 
     uint32_t & parserLen, bool & parserBreak)
@@ -433,51 +329,6 @@ void MyProtoDeCode::pop()
     mMsgQ.pop();
 }
 
-/* 
-int main()
-{
-    uint32_t len = 0;
-    uint8_t * pData = NULL;
-    MyProtoMsg msg1;
-    MyProtoMsg msg2;
-    MyProtoDeCode myDecode;
-    MyProtoEnCode myEncode;
-    msg1.head.server = 1;
-    msg1.body["op"] = "set";
-    msg1.body["key"] = "id";
-    msg1.body["value"] = "9856";
-    msg2.head.server = 2;
-    msg2.body["op"] = "get";
-    msg2.body["key"] = "id";
-    myDecode.init();
-    pData = myEncode.encode(&msg1, len);
-    if (!myDecode.parser(pData, len))
-    {
-        cout << "parser falied!" << endl;
-    }
-    else
-    {
-        cout << "msg1 parser successful!" << endl;
-    }
-    pData = myEncode.encode(&msg2, len);
-    if (!myDecode.parser(pData, len))
-    {
-        cout << "parser falied!" << endl;
-    }
-    else
-    {
-        cout << "msg2 parser successful!" << endl;
-    }
-    MyProtoMsg * pMsg = NULL;
-    while (!myDecode.empty())
-    {
-        pMsg = myDecode.front();
-        myProtoMsgPrint(*pMsg);
-        myDecode.pop();
-    }
-    return 0;
-}
- */
 
 int main()
 {
