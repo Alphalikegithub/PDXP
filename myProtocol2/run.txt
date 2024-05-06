@@ -1,0 +1,1 @@
+g++ MyProtocol.cpp ./protobuf/cekongmsg.pb.cc -o test -lprotobuf -std=c++11

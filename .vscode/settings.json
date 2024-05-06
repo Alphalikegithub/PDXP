@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "/root/PDXP/pdxpProtocal",
     "files.associations": {
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "system_error": "cpp"
     }
 }
