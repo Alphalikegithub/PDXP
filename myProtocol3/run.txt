@@ -1,1 +1,5 @@
-g++ MyProtocol.cpp ./protobuf/cekongmsg.pb.cc -o test -lprotobuf -std=c++11
+进入/root/code/PDXP/myProtocol3/protobuf目录下
+protoc -I=./ --cpp_out=./ ./cekong.proto 
+
+
+g++ MyProtocol.cpp ./protobuf/cekong.pb.cc -o test -lprotobuf -std=c++11

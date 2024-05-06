@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <string.h>
-#include "protobuf/cekongmsg.pb.h"
+#include "protobuf//cekong.pb.h"
 #ifdef _WIN32
 #include <winsock2.h>
 #pragma comment(lib,"Ws2_32.lib")
@@ -57,23 +57,35 @@ struct MyProtoMsg
 
 void myProtoMsgPrint(MyProtoMsg & msg)
 {
-    // string jsonStr = "";
-    // Json::FastWriter fWriter;
-    // jsonStr = fWriter.write(msg.body);
-    // printf("Head[VER=%d,MID=%d,SID=%d,DID=%d,BID=%d,Number=%d,FLAG=%d,BACKUP=%d,DATE=%d,TIME=%d,LEN=%d],Body:%s\n",
-    //        msg.head.VER, msg.head.MID, msg.head.SID, msg.head.DID, msg.head.BID, msg.head.No,
-    //        msg.head.FLAG, msg.head.Backup, msg.head.DATE, msg.head.TIME, msg.head.LEN, jsonStr.c_str());
-
     // 打印协议头部
     printf("Head[VER=%d,MID=%d,SID=%d,DID=%d,BID=%d,Number=%d,FLAG=%d,BACKUP=%d,DATE=%d,TIME=%d,LEN=%d],",
            msg.head.VER, msg.head.MID, msg.head.SID, msg.head.DID, msg.head.BID, msg.head.No,
            msg.head.FLAG, msg.head.Backup, msg.head.DATE, msg.head.TIME, msg.head.LEN);
+    std::cout << endl;
 
     // 打印 Protocol Buffers 格式的协议体
+    /* std::cout << "Body:" << std::endl;
+    std::cout << "Current Time: " << msg.body.current_time() << std::endl;
+    std::cout << "Device Status: " << msg.body.device_status() << std::endl;
+    std::cout << "Azimuth: " << msg.body.azimuth() << std::endl;
+    std::cout << "Elevation: " << msg.body.elevation() << std::endl;
+    std::cout << "Azimuth Offset: " << msg.body.azimuth_offset() << std::endl;
+    std::cout << "Elevation Offset: " << msg.body.elevation_offset() << std::endl;
+    std::cout << "Velocity: " << msg.body.velocity() << std::endl;
+    std::cout << "Distance: " << msg.body.distance() << std::endl;
+    std::cout << "Brightness: " << msg.body.brightness() << std::endl; */
+    
     std::cout << "Body:" << std::endl;
-    std::cout << "op: " << msg.body.op() << std::endl;
-    std::cout << "key: " << msg.body.key() << std::endl;
-    std::cout << "value: " << msg.body.value() << std::endl;
+    std::cout << "当前时刻: " << msg.body.current_time() << std::endl;
+    std::cout << "设备状态: " << msg.body.device_status() << std::endl;
+    std::cout << "方位角: " << msg.body.azimuth() << std::endl;
+    std::cout << "俯仰角: " << msg.body.elevation() << std::endl;
+    std::cout << "方位脱靶量: " << msg.body.azimuth_offset() << std::endl;
+    std::cout << "俯仰脱靶量: " << msg.body.elevation_offset() << std::endl;
+    std::cout << "测速值: " << msg.body.velocity() << std::endl;
+    std::cout << "测距值: " << msg.body.distance() << std::endl;
+    std::cout << "目标亮度: " << msg.body.brightness() << std::endl;
+    
 }
 
 
@@ -376,13 +388,19 @@ int main()
     msg1.head.No = 1; // 设置包序号
     msg1.head.FLAG = 0; // 设置信息处理标志
     msg1.head.Backup = 0; // 设置备用字段
-    msg1.head.DATE = 1229; // 设置发送日期
-    msg1.head.TIME = 123456; // 设置发送时间
+    msg1.head.DATE = 2405; // 设置发送日期
+    msg1.head.TIME = 225859; // 设置发送时间
 
     // 使用 Protocol Buffers 格式直接设置第一个消息的协议体字段
-    msg1.body.set_op("set");
-    msg1.body.set_key("id");
-    msg1.body.set_value("9856");
+    msg1.body.set_current_time(1735227015000);// 设置当前时刻1735227015000;(这个值表示从 Unix 时间戳起点开始的毫秒数)
+    msg1.body.set_device_status(1);           // 设置设备状态
+    msg1.body.set_azimuth(45.0);              // 设置方位角
+    msg1.body.set_elevation(30.0);            // 设置俯仰角
+    msg1.body.set_azimuth_offset(100);        // 设置方位脱靶量
+    msg1.body.set_elevation_offset(-50);      // 设置俯仰脱靶量
+    msg1.body.set_velocity(0.5);              // 设置测速值
+    msg1.body.set_distance(1000);             // 设置测距值
+    msg1.body.set_brightness(5);              // 设置目标亮度
 
 
     /************* 创建并设置第二个消息的协议头************ */
@@ -394,12 +412,19 @@ int main()
     msg2.head.No = 2; // 设置包序号
     msg2.head.FLAG = 1; // 设置信息处理标志
     msg2.head.Backup = 0; // 设置备用字段
-    msg2.head.DATE = 1229; // 设置发送日期
-    msg2.head.TIME = 654321; // 设置发送时间
+    msg2.head.DATE = 2405; // 设置发送日期
+    msg2.head.TIME = 235860; // 设置发送时间
 
     // 使用 Protocol Buffers 格式直接设置第二个消息的协议体字段
-    msg2.body.set_op("get");
-    msg2.body.set_key("id");
+    msg2.body.set_current_time(1715012458);   // 设置当前时刻
+    msg2.body.set_device_status(2);           // 设置设备状态
+    msg2.body.set_azimuth(90.0);              // 设置方位角
+    msg2.body.set_elevation(60.0);            // 设置俯仰角
+    msg2.body.set_azimuth_offset(200);        // 设置方位脱靶量
+    msg2.body.set_elevation_offset(-100);     // 设置俯仰脱靶量
+    msg2.body.set_velocity(1.0);              // 设置测速值
+    msg2.body.set_distance(2000);             // 设置测距值
+    msg2.body.set_brightness(8);              // 设置目标亮度
 
     myDecode.init();
     // 编码第一个消息并解析
