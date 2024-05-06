@@ -109,9 +109,9 @@ void MyProtoEnCode::headEncode(uint8_t * pData, MyProtoMsg * pMsg)
     //*pData = pMsg->head.VER;
     //设置协议头版本号为1
     *pData = 1; 
-    ++pData;
+    ++pData;//向前移动一个字节位置到任务标志MID
     *(uint16_t *)pData = htons(pMsg->head.MID);
-    pData += 2;
+    pData += 2;//向前移动两个个字节位置，到信源SID字段（32位大小）
     *(uint32_t *)pData = htonl(pMsg->head.SID);
     pData += 4;
     *(uint32_t *)pData = htonl(pMsg->head.DID);
@@ -172,7 +172,7 @@ uint8_t * MyProtoEnCode::encode(MyProtoMsg * pMsg, uint32_t & len)
 
 uint8_t* MyProtoEnCode::encode(MyProtoMsg* pMsg, uint32_t& len)
 {
-    uint8_t* pData = nullptr;
+    uint8_t* pData = NULL;
     Json::FastWriter fWriter;
 
     // 序列化协议体为 JSON 字符串
@@ -228,6 +228,7 @@ void MyProtoDeCode::init()
     mCurParserStatus = ON_PARSER_INIT;
 }
 
+//清空解析好的消息队列
 void MyProtoDeCode::clear()
 {
     MyProtoMsg * pMsg = NULL;
@@ -286,10 +287,12 @@ bool MyProtoDeCode::parserHead(uint8_t ** curData, uint32_t & curLen,
     parserBreak = false;
     if (curLen < MY_PROTO_HEAD_SIZE)
     {
-        parserBreak = true; // 终止解析
-        return true;
+        parserBreak = true; // 由于数据没有头部长，没办法解析，跳出即可
+        return true;//但是数据还是有用的，我们没有发现出错，返回true。等待一会数据到了，再解析头部。由于标志没变，一会还是解析头部
     }
     uint8_t * pData = *curData;
+    //从网络字节流中，解析出来协议格式数据。保存在MyProtoMsg mCurMsg; //当前解析中的协议消息体
+	//解析出来版本号
     mCurMsg.head.VER = *pData;
     pData++;
     mCurMsg.head.MID = ntohs(*(uint16_t*)pData);
@@ -312,12 +315,12 @@ bool MyProtoDeCode::parserHead(uint8_t ** curData, uint32_t & curLen,
     pData += 4;
     // 计算协议体长度，整个消息长度减去头部长度
     mCurMsg.head.LEN = ntohs(*(uint16_t*)(pData)); // 根据协议头部的定义获取长度字段
-    //异常大包，则返回解析失败
+    //判断数据长度是否超过指定的大小，异常大包，则返回解析失败
     if (mCurMsg.head.LEN > MY_PROTO_MAX_SIZE)
     {
         return false;
     }
-    //解析指针向前移动MY_PROTO_HEAD_SIZE字节
+    //解析指针向前移动MY_PROTO_HEAD_SIZE字节，移动到消息体位置,跳过消息头大小
     (*curData) += MY_PROTO_HEAD_SIZE;
     curLen -= MY_PROTO_HEAD_SIZE;
     parserLen += MY_PROTO_HEAD_SIZE;
@@ -325,7 +328,7 @@ bool MyProtoDeCode::parserHead(uint8_t ** curData, uint32_t & curLen,
     return true;
 }
 
-
+//用于解析消息体
 bool MyProtoDeCode::parserBody(uint8_t ** curData, uint32_t & curLen, 
     uint32_t & parserLen, bool & parserBreak)
 {
@@ -334,6 +337,7 @@ bool MyProtoDeCode::parserBody(uint8_t ** curData, uint32_t & curLen,
 
     if (curLen < jsonSize)
     {
+        //数据还没有完全到达，我们还要等待一会数据到了，再解析消息体。由于标志没变，一会还是解析消息体
         parserBreak = true; //终止解析
         return true;
     }
@@ -351,16 +355,16 @@ bool MyProtoDeCode::parserBody(uint8_t ** curData, uint32_t & curLen,
     return true;
 }
 
-
+//从网络字节流中解析出来协议消息,len由socket函数recv返回
 bool MyProtoDeCode::parser(void * data, size_t len)
 {
     if (len <= 0)
     {
         return false;
     }
-    uint32_t curLen = 0;
-    uint32_t parserLen = 0;
-    uint8_t * curData = NULL;
+    uint32_t curLen = 0;//用于保存未解析的网络字节流长度（是对vector)
+    uint32_t parserLen = 0;//保存vector中已经被解析完成的字节流，一会用于清除vector中数据
+    uint8_t * curData = NULL;//指向data,当前未解析的网络字节流
     curData = (uint8_t *)data;
     //把当前要解析的网络字节流写入未解析完字节流之后
     while (len--)
@@ -375,6 +379,7 @@ bool MyProtoDeCode::parser(void * data, size_t len)
     {
         bool parserBreak = false;
         //解析协议头
+        //注意：标识很有用，当数据没有完全达到，会等待下一次接受数据以后继续解析头部
         if (ON_PARSER_INIT == mCurParserStatus ||
             ON_PARSER_BODY == mCurParserStatus)
         {
@@ -382,6 +387,7 @@ bool MyProtoDeCode::parser(void * data, size_t len)
             {
                 return false;
             }
+            //退出循环，等待下一次数据到达，一起解析头部
             if (parserBreak) break;
         }
         //解析完协议头，解析协议体
