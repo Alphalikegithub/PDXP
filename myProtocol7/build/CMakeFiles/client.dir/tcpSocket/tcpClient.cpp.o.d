@@ -27,24 +27,13 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/include/_G_config.h /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h \
- /root/code/PDXP/myProtocol7/tcpSocket/../src/myprotocol.h \
- /usr/include/c++/4.8.2/iostream \
+ /usr/include/string.h /usr/include/c++/4.8.2/queue \
+ /usr/include/c++/4.8.2/deque /usr/include/c++/4.8.2/bits/stl_algobase.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
- /usr/include/c++/4.8.2/ostream /usr/include/c++/4.8.2/ios \
- /usr/include/c++/4.8.2/iosfwd /usr/include/c++/4.8.2/bits/stringfwd.h \
- /usr/include/c++/4.8.2/bits/memoryfwd.h \
- /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
- /usr/include/c++/4.8.2/exception \
- /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.2/bits/exception_ptr.h \
- /usr/include/c++/4.8.2/bits/exception_defines.h \
- /usr/include/c++/4.8.2/bits/nested_exception.h \
- /usr/include/c++/4.8.2/bits/char_traits.h \
- /usr/include/c++/4.8.2/bits/stl_algobase.h \
  /usr/include/c++/4.8.2/bits/functexcept.h \
+ /usr/include/c++/4.8.2/bits/exception_defines.h \
  /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
  /usr/include/c++/4.8.2/ext/type_traits.h \
  /usr/include/c++/4.8.2/ext/numeric_traits.h \
@@ -56,7 +45,39 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.8.2/debug/debug.h \
  /usr/include/c++/4.8.2/bits/stl_iterator.h \
- /usr/include/c++/4.8.2/cstdint /usr/include/c++/4.8.2/bits/localefwd.h \
+ /usr/include/c++/4.8.2/bits/allocator.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/4.8.2/ext/new_allocator.h /usr/include/c++/4.8.2/new \
+ /usr/include/c++/4.8.2/exception \
+ /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.2/bits/exception_ptr.h \
+ /usr/include/c++/4.8.2/bits/nested_exception.h \
+ /usr/include/c++/4.8.2/bits/memoryfwd.h \
+ /usr/include/c++/4.8.2/bits/stl_construct.h \
+ /usr/include/c++/4.8.2/ext/alloc_traits.h \
+ /usr/include/c++/4.8.2/bits/alloc_traits.h \
+ /usr/include/c++/4.8.2/bits/ptr_traits.h \
+ /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8.2/bits/stl_deque.h \
+ /usr/include/c++/4.8.2/initializer_list \
+ /usr/include/c++/4.8.2/bits/range_access.h \
+ /usr/include/c++/4.8.2/bits/deque.tcc /usr/include/c++/4.8.2/vector \
+ /usr/include/c++/4.8.2/bits/stl_vector.h \
+ /usr/include/c++/4.8.2/bits/stl_bvector.h \
+ /usr/include/c++/4.8.2/bits/functional_hash.h \
+ /usr/include/c++/4.8.2/bits/hash_bytes.h \
+ /usr/include/c++/4.8.2/bits/vector.tcc \
+ /usr/include/c++/4.8.2/bits/stl_heap.h \
+ /usr/include/c++/4.8.2/bits/stl_function.h \
+ /usr/include/c++/4.8.2/backward/binders.h \
+ /usr/include/c++/4.8.2/bits/stl_queue.h \
+ /root/code/PDXP/myProtocol7/tcpSocket/../src/myprotocol.h \
+ /usr/include/c++/4.8.2/iostream /usr/include/c++/4.8.2/ostream \
+ /usr/include/c++/4.8.2/ios /usr/include/c++/4.8.2/iosfwd \
+ /usr/include/c++/4.8.2/bits/stringfwd.h \
+ /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
+ /usr/include/c++/4.8.2/bits/char_traits.h /usr/include/c++/4.8.2/cstdint \
+ /usr/include/c++/4.8.2/bits/localefwd.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/4.8.2/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/4.8.2/cctype \
@@ -68,24 +89,16 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/include/bits/timex.h /usr/include/bits/setjmp.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
  /usr/include/c++/4.8.2/bits/locale_classes.h \
- /usr/include/c++/4.8.2/string /usr/include/c++/4.8.2/bits/allocator.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/4.8.2/ext/new_allocator.h /usr/include/c++/4.8.2/new \
+ /usr/include/c++/4.8.2/string \
  /usr/include/c++/4.8.2/bits/ostream_insert.h \
  /usr/include/c++/4.8.2/bits/cxxabi_forced.h \
- /usr/include/c++/4.8.2/bits/stl_function.h \
- /usr/include/c++/4.8.2/backward/binders.h \
- /usr/include/c++/4.8.2/bits/range_access.h \
  /usr/include/c++/4.8.2/bits/basic_string.h \
- /usr/include/c++/4.8.2/initializer_list \
  /usr/include/c++/4.8.2/ext/string_conversions.h \
  /usr/include/c++/4.8.2/cstdlib /usr/include/c++/4.8.2/cstdio \
  /usr/include/c++/4.8.2/cerrno /usr/include/errno.h \
  /usr/include/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
  /usr/include/asm-generic/errno-base.h \
- /usr/include/c++/4.8.2/bits/functional_hash.h \
- /usr/include/c++/4.8.2/bits/hash_bytes.h \
  /usr/include/c++/4.8.2/bits/basic_string.tcc \
  /usr/include/c++/4.8.2/bits/locale_classes.tcc \
  /usr/include/c++/4.8.2/streambuf \
@@ -99,19 +112,7 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/include/c++/4.8.2/bits/locale_facets.tcc \
  /usr/include/c++/4.8.2/bits/basic_ios.tcc \
  /usr/include/c++/4.8.2/bits/ostream.tcc /usr/include/c++/4.8.2/istream \
- /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/c++/4.8.2/queue \
- /usr/include/c++/4.8.2/deque /usr/include/c++/4.8.2/bits/stl_construct.h \
- /usr/include/c++/4.8.2/ext/alloc_traits.h \
- /usr/include/c++/4.8.2/bits/alloc_traits.h \
- /usr/include/c++/4.8.2/bits/ptr_traits.h \
- /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
- /usr/include/c++/4.8.2/bits/stl_deque.h \
- /usr/include/c++/4.8.2/bits/deque.tcc /usr/include/c++/4.8.2/vector \
- /usr/include/c++/4.8.2/bits/stl_vector.h \
- /usr/include/c++/4.8.2/bits/stl_bvector.h \
- /usr/include/c++/4.8.2/bits/vector.tcc \
- /usr/include/c++/4.8.2/bits/stl_heap.h \
- /usr/include/c++/4.8.2/bits/stl_queue.h /usr/include/c++/4.8.2/cstring \
+ /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/c++/4.8.2/cstring \
  /root/code/PDXP/myProtocol7/tcpSocket/../src/../protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/local/include/google/protobuf/port_def.inc \
