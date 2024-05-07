@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol4
+CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol4/build
+CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol5/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol4/build/CMakeFiles /root/code/PDXP/myProtocol4/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol5/build/CMakeFiles /root/code/PDXP/myProtocol5/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol4/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol5/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,72 +117,38 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named client
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
+.PHONY : client
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
 
-MyProtocol.o: MyProtocol.cpp.o
-.PHONY : MyProtocol.o
+#=============================================================================
+# Target rules for targets named server
 
-# target to build an object file
-MyProtocol.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MyProtocol.cpp.o
-.PHONY : MyProtocol.cpp.o
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
-MyProtocol.i: MyProtocol.cpp.i
-.PHONY : MyProtocol.i
-
-# target to preprocess a source file
-MyProtocol.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MyProtocol.cpp.i
-.PHONY : MyProtocol.cpp.i
-
-MyProtocol.s: MyProtocol.cpp.s
-.PHONY : MyProtocol.s
-
-# target to generate assembly for a file
-MyProtocol.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MyProtocol.cpp.s
-.PHONY : MyProtocol.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 protobuf/cekong.pb.o: protobuf/cekong.pb.cc.o
 .PHONY : protobuf/cekong.pb.o
 
 # target to build an object file
 protobuf/cekong.pb.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/protobuf/cekong.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/protobuf/cekong.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/protobuf/cekong.pb.cc.o
 .PHONY : protobuf/cekong.pb.cc.o
 
 protobuf/cekong.pb.i: protobuf/cekong.pb.cc.i
@@ -190,7 +156,8 @@ protobuf/cekong.pb.i: protobuf/cekong.pb.cc.i
 
 # target to preprocess a source file
 protobuf/cekong.pb.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/protobuf/cekong.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/protobuf/cekong.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/protobuf/cekong.pb.cc.i
 .PHONY : protobuf/cekong.pb.cc.i
 
 protobuf/cekong.pb.s: protobuf/cekong.pb.cc.s
@@ -198,8 +165,84 @@ protobuf/cekong.pb.s: protobuf/cekong.pb.cc.s
 
 # target to generate assembly for a file
 protobuf/cekong.pb.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/protobuf/cekong.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/protobuf/cekong.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/protobuf/cekong.pb.cc.s
 .PHONY : protobuf/cekong.pb.cc.s
+
+src/MyProtocol.o: src/MyProtocol.cpp.o
+.PHONY : src/MyProtocol.o
+
+# target to build an object file
+src/MyProtocol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.o
+.PHONY : src/MyProtocol.cpp.o
+
+src/MyProtocol.i: src/MyProtocol.cpp.i
+.PHONY : src/MyProtocol.i
+
+# target to preprocess a source file
+src/MyProtocol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.i
+.PHONY : src/MyProtocol.cpp.i
+
+src/MyProtocol.s: src/MyProtocol.cpp.s
+.PHONY : src/MyProtocol.s
+
+# target to generate assembly for a file
+src/MyProtocol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.s
+.PHONY : src/MyProtocol.cpp.s
+
+tcpSocket/tcpClient.o: tcpSocket/tcpClient.cpp.o
+.PHONY : tcpSocket/tcpClient.o
+
+# target to build an object file
+tcpSocket/tcpClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o
+.PHONY : tcpSocket/tcpClient.cpp.o
+
+tcpSocket/tcpClient.i: tcpSocket/tcpClient.cpp.i
+.PHONY : tcpSocket/tcpClient.i
+
+# target to preprocess a source file
+tcpSocket/tcpClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i
+.PHONY : tcpSocket/tcpClient.cpp.i
+
+tcpSocket/tcpClient.s: tcpSocket/tcpClient.cpp.s
+.PHONY : tcpSocket/tcpClient.s
+
+# target to generate assembly for a file
+tcpSocket/tcpClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s
+.PHONY : tcpSocket/tcpClient.cpp.s
+
+tcpSocket/tcpServer.o: tcpSocket/tcpServer.cpp.o
+.PHONY : tcpSocket/tcpServer.o
+
+# target to build an object file
+tcpSocket/tcpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o
+.PHONY : tcpSocket/tcpServer.cpp.o
+
+tcpSocket/tcpServer.i: tcpSocket/tcpServer.cpp.i
+.PHONY : tcpSocket/tcpServer.i
+
+# target to preprocess a source file
+tcpSocket/tcpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i
+.PHONY : tcpSocket/tcpServer.cpp.i
+
+tcpSocket/tcpServer.s: tcpSocket/tcpServer.cpp.s
+.PHONY : tcpSocket/tcpServer.s
+
+# target to generate assembly for a file
+tcpSocket/tcpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s
+.PHONY : tcpSocket/tcpServer.cpp.s
 
 # Help Target
 help:
@@ -209,16 +252,20 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... MyProtocol.o"
-	@echo "... MyProtocol.i"
-	@echo "... MyProtocol.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... client"
+	@echo "... server"
 	@echo "... protobuf/cekong.pb.o"
 	@echo "... protobuf/cekong.pb.i"
 	@echo "... protobuf/cekong.pb.s"
+	@echo "... src/MyProtocol.o"
+	@echo "... src/MyProtocol.i"
+	@echo "... src/MyProtocol.s"
+	@echo "... tcpSocket/tcpClient.o"
+	@echo "... tcpSocket/tcpClient.i"
+	@echo "... tcpSocket/tcpClient.s"
+	@echo "... tcpSocket/tcpServer.o"
+	@echo "... tcpSocket/tcpServer.i"
+	@echo "... tcpSocket/tcpServer.s"
 .PHONY : help
 
 

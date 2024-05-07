@@ -1,21 +1,43 @@
-CMakeFiles/test.dir/main.cpp.o: /root/code/PDXP/myProtocol4/main.cpp \
- /usr/include/stdc-predef.h /root/code/PDXP/myProtocol4/myprotocol.h \
+CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
+ /root/code/PDXP/myProtocol5/tcpSocket/tcpClient.cpp \
+ /usr/include/stdc-predef.h /usr/include/sys/types.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/time.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/xlocale.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/netinet/in.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/bits/in.h \
+ /usr/include/arpa/inet.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h \
+ /root/code/PDXP/myProtocol5/tcpSocket/../src/myprotocol.h \
  /usr/include/c++/4.8.2/iostream \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/bits/wordsize.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/4.8.2/ostream /usr/include/c++/4.8.2/ios \
  /usr/include/c++/4.8.2/iosfwd /usr/include/c++/4.8.2/bits/stringfwd.h \
  /usr/include/c++/4.8.2/bits/memoryfwd.h \
  /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
- /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
- /usr/include/bits/wchar.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
- /usr/include/xlocale.h /usr/include/c++/4.8.2/exception \
+ /usr/include/c++/4.8.2/exception \
  /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8.2/bits/exception_ptr.h \
  /usr/include/c++/4.8.2/bits/exception_defines.h \
@@ -34,23 +56,16 @@ CMakeFiles/test.dir/main.cpp.o: /root/code/PDXP/myProtocol4/main.cpp \
  /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.8.2/debug/debug.h \
  /usr/include/c++/4.8.2/bits/stl_iterator.h \
- /usr/include/c++/4.8.2/cstdint \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
- /usr/include/stdint.h /usr/include/c++/4.8.2/bits/localefwd.h \
+ /usr/include/c++/4.8.2/cstdint /usr/include/c++/4.8.2/bits/localefwd.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/4.8.2/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/4.8.2/cctype \
- /usr/include/ctype.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/endian.h \
- /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
- /usr/include/bits/byteswap-16.h /usr/include/c++/4.8.2/bits/ios_base.h \
+ /usr/include/ctype.h /usr/include/c++/4.8.2/bits/ios_base.h \
  /usr/include/c++/4.8.2/ext/atomicity.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
- /usr/include/bits/sched.h /usr/include/bits/time.h \
- /usr/include/bits/timex.h /usr/include/bits/pthreadtypes.h \
- /usr/include/bits/setjmp.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/timex.h /usr/include/bits/setjmp.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
  /usr/include/c++/4.8.2/bits/locale_classes.h \
  /usr/include/c++/4.8.2/string /usr/include/c++/4.8.2/bits/allocator.h \
@@ -64,14 +79,7 @@ CMakeFiles/test.dir/main.cpp.o: /root/code/PDXP/myProtocol4/main.cpp \
  /usr/include/c++/4.8.2/bits/basic_string.h \
  /usr/include/c++/4.8.2/initializer_list \
  /usr/include/c++/4.8.2/ext/string_conversions.h \
- /usr/include/c++/4.8.2/cstdlib /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/sigset.h \
- /usr/include/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/4.8.2/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/c++/4.8.2/cstdlib /usr/include/c++/4.8.2/cstdio \
  /usr/include/c++/4.8.2/cerrno /usr/include/errno.h \
  /usr/include/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
@@ -103,9 +111,8 @@ CMakeFiles/test.dir/main.cpp.o: /root/code/PDXP/myProtocol4/main.cpp \
  /usr/include/c++/4.8.2/bits/stl_bvector.h \
  /usr/include/c++/4.8.2/bits/vector.tcc \
  /usr/include/c++/4.8.2/bits/stl_heap.h \
- /usr/include/c++/4.8.2/bits/stl_queue.h /usr/include/string.h \
- /usr/include/c++/4.8.2/cstring \
- /root/code/PDXP/myProtocol4/protobuf/cekong.pb.h \
+ /usr/include/c++/4.8.2/bits/stl_queue.h /usr/include/c++/4.8.2/cstring \
+ /root/code/PDXP/myProtocol5/tcpSocket/../src/../protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \
@@ -211,10 +218,4 @@ CMakeFiles/test.dir/main.cpp.o: /root/code/PDXP/myProtocol4/main.cpp \
  /usr/local/include/google/protobuf/map.h \
  /usr/local/include/google/protobuf/map_type_handler.h \
  /usr/local/include/google/protobuf/extension_set.h \
- /usr/include/c++/4.8.2/cassert /usr/include/arpa/inet.h \
- /usr/include/netinet/in.h /usr/include/sys/socket.h \
- /usr/include/sys/uio.h /usr/include/bits/uio.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
- /usr/include/asm-generic/sockios.h /usr/include/bits/in.h
+ /usr/include/c++/4.8.2/cassert

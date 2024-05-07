@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/code/PDXP/myProtocol4
+CXX_INCLUDES = 
 
 CXX_FLAGS = -std=gnu++11
 

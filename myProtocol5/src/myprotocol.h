@@ -8,7 +8,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <cstring>
-#include "protobuf/cekong.pb.h"
+#include "../protobuf/cekong.pb.h"
+
 
 #ifdef _WIN32
 #include <winsock2.h>
