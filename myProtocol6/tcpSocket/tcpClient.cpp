@@ -40,8 +40,15 @@ int main(int argc,char* argv[])
 		return -2;
 	}
 
-	//连接成功，进行数据发送-------------这里可以改为循环发送
-	len = myprotoSend(sock);
+	/* //连接成功，进行数据发送-------------这里可以改为循环发送
+	len = myprotoSend(sock); */
+
+	 //连接成功，进行数据发送
+    while(1) { // 循环发送消息
+        myprotoSend(sock);
+        // 在发送消息之后，可以添加适当的延迟，以模拟实际场景
+        sleep(10); // 1秒延迟
+    }
 
 	close(sock);
 	return 0;
@@ -54,16 +61,11 @@ int myprotoSend(int sock) //-----------这里改为字符串解析，发送自�
     uint8_t * pData = nullptr;
 
 	MyProtoMsg msg1;
-	//MyProtoMsg msg2;
+	MyProtoMsg msg2;
 	/* 打包 */
 	MyProtoEncode myEncode;
 
-	//------放入消息
-	// msg1.head.server = 1;
-	// msg1.body["op"] = "set";
-	// msg1.body["key"] = "id";
-	// msg1.body["value"] = "6666";
-
+	//------放入第一个消息
 	msg1.head.MID = 12345; // 设置任务标志
     msg1.head.SID = 987654321; // 设置信源
     msg1.head.DID = 123456789; // 设置信宿
@@ -87,10 +89,37 @@ int myprotoSend(int sock) //-----------这里改为字符串解析，发送自�
 
 	pData = myEncode.encode(&msg1,len);
 
-	// msg2.head.server = 2;
-	// msg2.body["op"] = "get";
-	// msg2.body["key"] = "id";
-	// pData = myEncode.encode(&msg2,len);
+	send(sock, pData, len, 0);
 
-	return send(sock,pData,len,0);
+
+	//------放入第一个消息
+	/************* 创建并设置第二个消息的协议头************ */
+    //msg2.head.VER = 1;//设置版本号
+    msg2.head.MID = 54321; // 设置任务标志
+    msg2.head.SID = 123456789; // 设置信源
+    msg2.head.DID = 987654321; // 设置信宿
+    msg2.head.BID = 123456789; // 设置信息分类标志
+    msg2.head.No = 2; // 设置包序号
+    msg2.head.FLAG = 1; // 设置信息处理标志
+    msg2.head.Backup = 0; // 设置备用字段
+    msg2.head.DATE = 2405; // 设置发送日期
+    msg2.head.TIME = 235860; // 设置发送时间
+
+    // 使用 Protocol Buffers 格式直接设置第二个消息的协议体字段
+    msg2.body.set_current_time(1715012458);   // 设置当前时刻
+    msg2.body.set_device_status(2);           // 设置设备状态
+    msg2.body.set_azimuth(90.0);              // 设置方位角
+    msg2.body.set_elevation(60.0);            // 设置俯仰角
+    msg2.body.set_azimuth_offset(200);        // 设置方位脱靶量
+    msg2.body.set_elevation_offset(-100);     // 设置俯仰脱靶量
+    msg2.body.set_velocity(1.0);              // 设置测速值
+    msg2.body.set_distance(2000);             // 设置测距值
+    msg2.body.set_brightness(8);              // 设置目标亮度
+
+	// 编码第二个消息
+	pData = myEncode.encode(&msg2, len);
+
+	send(sock, pData, len, 0);
+
+	return 0;
 }

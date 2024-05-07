@@ -1,0 +1,4 @@
+/root/code/PDXP/myProtocol6/build/CMakeFiles/rebuild_cache.dir
+/root/code/PDXP/myProtocol6/build/CMakeFiles/edit_cache.dir
+/root/code/PDXP/myProtocol6/build/CMakeFiles/client.dir
+/root/code/PDXP/myProtocol6/build/CMakeFiles/server.dir

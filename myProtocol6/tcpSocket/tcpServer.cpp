@@ -25,6 +25,8 @@ int main(int argc,char* argv[])
 	struct sockaddr_in remote;
 	unsigned int len = sizeof(struct sockaddr_in);
 
+	int msgCount = 0; // 消息计数器
+
 	while(1)
 	{
 		//开始阻塞方式接收客户端链接
@@ -36,11 +38,22 @@ int main(int argc,char* argv[])
 		}
 		//开始接收客户端消息
 		printf("get connect from %s:%d\n",inet_ntoa(remote.sin_addr),ntohs(remote.sin_port)); //inet_ntoa将网络地址转换成“.”点隔的字符串格式
-		char buf[1024];
+		/* char buf[1024];
 
-		len = myprotoRecv(sock,buf,1024); //len复用，这里作为接收长度------这里可以改为循环
+		len = myprotoRecv(sock,buf,1024); //len复用，这里作为接收长度------这里可以改为循环 */
+
+		// 循环接收并处理多条消息
+        while(1) {
+            char buf[1024];
+            len = myprotoRecv(sock, buf, 1024);
+            if(len <= 0) {
+                printf("Connection closed by client\n");
+                break;
+            }
+			msgCount++; // 接收到一条消息，计数器加一
+        }
 		
-		
+		printf("Total messages received: %d\n", msgCount);
 		close(sock);
 	}
 	return 0;
