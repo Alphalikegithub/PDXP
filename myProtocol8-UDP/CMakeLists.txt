@@ -12,12 +12,12 @@ set(SOURCES_COMMON
 )
 
 set(SOURCES_SERVER
-    tcpSocket/tcpServer.cpp
+    tcpSocket/udpServer.cpp
     ${SOURCES_COMMON}
 )
 
 set(SOURCES_CLIENT
-    tcpSocket/tcpClient.cpp
+    tcpSocket/udpClient.cpp
     src/MessageManager.cpp  # 添加 MessageManager.cpp
     ${SOURCES_COMMON}
 )

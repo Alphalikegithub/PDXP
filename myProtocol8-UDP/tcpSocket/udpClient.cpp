@@ -10,8 +10,8 @@
 #include "../src/myprotocol.h"
 #include "../src/MessageManager.h" // 包含 MessageManager 类的头文件
 
-int myprotoSend(int sock, MyProtoMsg& msg);
-void sendAllMessages(int sock, std::queue<MyProtoMsg>& msgQueue);
+int myprotoSend(int sock, MyProtoMsg& msg, struct sockaddr_in& serverAddr);
+void sendAllMessages(int sock, std::queue<MyProtoMsg>& msgQueue, struct sockaddr_in& serverAddr);
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
@@ -20,24 +20,17 @@ int main(int argc, char* argv[]) {
     }
 
     // 创建socket并连接服务器
-    int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    int sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);//注意此处的SOCK_DGRAM
     if (sock < 0) {
-        printf("socket create failure\n");
+        printf("Socket create failure\n");
         return -1;
     }
 
-    // 使用connect与服务器地址，端口连接，需要定义服务端信息：地址结构体
+    // 设置服务器地址信息
     struct sockaddr_in server;
     server.sin_family = AF_INET; //IPV4
     server.sin_port = htons(atoi(argv[2])); //atoi将字符串转数字
     server.sin_addr.s_addr = inet_addr(argv[1]); //不直接使用htonl,因为传入的是字符串IP地址，使用inet_addr正好对字符串IP,转网络大端所用字节序
-
-    unsigned int len = sizeof(struct sockaddr_in); //获取socket地址结构体长度
-
-    if (connect(sock, (struct sockaddr*)&server, len) < 0) {
-        printf("socket connect failure\n");
-        return -2;
-    }
 
     // 创建消息队列并添加消息
     std::queue<MyProtoMsg> msgQueue;
@@ -51,17 +44,15 @@ int main(int argc, char* argv[]) {
     // 可以使用消息队列中的消息进行后续的操作，比如发送到服务器端等
 
     // 发送所有消息
-    sendAllMessages(sock, msgQueue);
+    sendAllMessages(sock, msgQueue, server);
 
     // 关闭socket
     close(sock);
     return 0;
 }
 
-
-
 // Function to send a single message
-int myprotoSend(int sock, MyProtoMsg& msg) {
+int myprotoSend(int sock, MyProtoMsg& msg, struct sockaddr_in& serverAddr) {
     uint32_t len = 0;
     uint8_t * pData = nullptr;
 
@@ -69,16 +60,16 @@ int myprotoSend(int sock, MyProtoMsg& msg) {
     MyProtoEncode myEncode;
     pData = myEncode.encode(&msg, len);
 
-    send(sock, pData, len, 0);
+    sendto(sock, pData, len, 0, (struct sockaddr*)&serverAddr, sizeof(serverAddr));
 
     return 0;
 }
 
 // Function to send all messages in the queue
-void sendAllMessages(int sock, std::queue<MyProtoMsg>& msgQueue) {
+void sendAllMessages(int sock, std::queue<MyProtoMsg>& msgQueue, struct sockaddr_in& serverAddr) {
     while (!msgQueue.empty()) {
         MyProtoMsg msg = msgQueue.front();
-        myprotoSend(sock, msg);
+        myprotoSend(sock, msg, serverAddr);
         msgQueue.pop(); // Remove the sent message from the queue
         sleep(3); // Add a delay between sending messages
     }

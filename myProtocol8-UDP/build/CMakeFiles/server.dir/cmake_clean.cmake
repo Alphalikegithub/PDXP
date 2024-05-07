@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/protobuf/cekong.pb.cc.o.d"
   "CMakeFiles/server.dir/src/myProtocol.cpp.o"
   "CMakeFiles/server.dir/src/myProtocol.cpp.o.d"
-  "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o"
-  "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o.d"
+  "CMakeFiles/server.dir/tcpSocket/udpServer.cpp.o"
+  "CMakeFiles/server.dir/tcpSocket/udpServer.cpp.o.d"
   "server"
   "server.pdb"
 )

@@ -1,7 +1,7 @@
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: \
- /root/code/PDXP/myProtocol8/protobuf/cekong.pb.cc \
+ /root/code/PDXP/myProtocol8-UDP/protobuf/cekong.pb.cc \
  /usr/include/stdc-predef.h \
- /root/code/PDXP/myProtocol8/protobuf/cekong.pb.h \
+ /root/code/PDXP/myProtocol8-UDP/protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \

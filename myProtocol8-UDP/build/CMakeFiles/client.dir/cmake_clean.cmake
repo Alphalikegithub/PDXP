@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/MessageManager.cpp.o.d"
   "CMakeFiles/client.dir/src/myProtocol.cpp.o"
   "CMakeFiles/client.dir/src/myProtocol.cpp.o.d"
-  "CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o"
-  "CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o.d"
+  "CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o"
+  "CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o.d"
   "client"
   "client.pdb"
 )

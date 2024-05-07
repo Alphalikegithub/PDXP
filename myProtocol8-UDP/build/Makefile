@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol8
+CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol8-UDP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol8/build
+CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol8-UDP/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8/build/CMakeFiles /root/code/PDXP/myProtocol8/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8-UDP/build/CMakeFiles /root/code/PDXP/myProtocol8-UDP/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8-UDP/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -220,53 +220,53 @@ src/myProtocol.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/myProtocol.cpp.s
 .PHONY : src/myProtocol.cpp.s
 
-tcpSocket/tcpClient.o: tcpSocket/tcpClient.cpp.o
-.PHONY : tcpSocket/tcpClient.o
+tcpSocket/udpClient.o: tcpSocket/udpClient.cpp.o
+.PHONY : tcpSocket/udpClient.o
 
 # target to build an object file
-tcpSocket/tcpClient.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o
-.PHONY : tcpSocket/tcpClient.cpp.o
+tcpSocket/udpClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o
+.PHONY : tcpSocket/udpClient.cpp.o
 
-tcpSocket/tcpClient.i: tcpSocket/tcpClient.cpp.i
-.PHONY : tcpSocket/tcpClient.i
+tcpSocket/udpClient.i: tcpSocket/udpClient.cpp.i
+.PHONY : tcpSocket/udpClient.i
 
 # target to preprocess a source file
-tcpSocket/tcpClient.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i
-.PHONY : tcpSocket/tcpClient.cpp.i
+tcpSocket/udpClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/udpClient.cpp.i
+.PHONY : tcpSocket/udpClient.cpp.i
 
-tcpSocket/tcpClient.s: tcpSocket/tcpClient.cpp.s
-.PHONY : tcpSocket/tcpClient.s
+tcpSocket/udpClient.s: tcpSocket/udpClient.cpp.s
+.PHONY : tcpSocket/udpClient.s
 
 # target to generate assembly for a file
-tcpSocket/tcpClient.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s
-.PHONY : tcpSocket/tcpClient.cpp.s
+tcpSocket/udpClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/tcpSocket/udpClient.cpp.s
+.PHONY : tcpSocket/udpClient.cpp.s
 
-tcpSocket/tcpServer.o: tcpSocket/tcpServer.cpp.o
-.PHONY : tcpSocket/tcpServer.o
+tcpSocket/udpServer.o: tcpSocket/udpServer.cpp.o
+.PHONY : tcpSocket/udpServer.o
 
 # target to build an object file
-tcpSocket/tcpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o
-.PHONY : tcpSocket/tcpServer.cpp.o
+tcpSocket/udpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/udpServer.cpp.o
+.PHONY : tcpSocket/udpServer.cpp.o
 
-tcpSocket/tcpServer.i: tcpSocket/tcpServer.cpp.i
-.PHONY : tcpSocket/tcpServer.i
+tcpSocket/udpServer.i: tcpSocket/udpServer.cpp.i
+.PHONY : tcpSocket/udpServer.i
 
 # target to preprocess a source file
-tcpSocket/tcpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i
-.PHONY : tcpSocket/tcpServer.cpp.i
+tcpSocket/udpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/udpServer.cpp.i
+.PHONY : tcpSocket/udpServer.cpp.i
 
-tcpSocket/tcpServer.s: tcpSocket/tcpServer.cpp.s
-.PHONY : tcpSocket/tcpServer.s
+tcpSocket/udpServer.s: tcpSocket/udpServer.cpp.s
+.PHONY : tcpSocket/udpServer.s
 
 # target to generate assembly for a file
-tcpSocket/tcpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s
-.PHONY : tcpSocket/tcpServer.cpp.s
+tcpSocket/udpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/tcpSocket/udpServer.cpp.s
+.PHONY : tcpSocket/udpServer.cpp.s
 
 # Help Target
 help:
@@ -287,12 +287,12 @@ help:
 	@echo "... src/myProtocol.o"
 	@echo "... src/myProtocol.i"
 	@echo "... src/myProtocol.s"
-	@echo "... tcpSocket/tcpClient.o"
-	@echo "... tcpSocket/tcpClient.i"
-	@echo "... tcpSocket/tcpClient.s"
-	@echo "... tcpSocket/tcpServer.o"
-	@echo "... tcpSocket/tcpServer.i"
-	@echo "... tcpSocket/tcpServer.s"
+	@echo "... tcpSocket/udpClient.o"
+	@echo "... tcpSocket/udpClient.i"
+	@echo "... tcpSocket/udpClient.s"
+	@echo "... tcpSocket/udpServer.o"
+	@echo "... tcpSocket/udpServer.i"
+	@echo "... tcpSocket/udpServer.s"
 .PHONY : help
 
 

@@ -1,4 +1,4 @@
-/root/code/PDXP/myProtocol8/build/CMakeFiles/rebuild_cache.dir
-/root/code/PDXP/myProtocol8/build/CMakeFiles/edit_cache.dir
-/root/code/PDXP/myProtocol8/build/CMakeFiles/client.dir
-/root/code/PDXP/myProtocol8/build/CMakeFiles/server.dir
+/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles/rebuild_cache.dir
+/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles/edit_cache.dir
+/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles/client.dir
+/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles/server.dir

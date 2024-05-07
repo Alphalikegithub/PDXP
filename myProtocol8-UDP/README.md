@@ -1,97 +1,59 @@
-在myProtocol8中：
-第一：
-    添加了超时机制，使服务器能够在一定时间内未收到客户端连接时继续执行后续操作。下面是对这部分代码的详细解释：
+代码中，TCP服务器（tcpServer.cpp）和UDP服务器（udpServer.cpp）之间存在几个关键的不同之处：
 
-1. **包含必要的头文件**：
-   ```cpp
-   #include <sys/select.h> // 包含 select 函数相关的头文件
-   #include <sys/time.h>   // 包含 timeval 结构体相关的头文件
-   #include <cstring>       // 包含 memset 函数相关的头文件
-   ```
-   我们引入了 `<sys/select.h>` 头文件，其中包含了 `select()` 函数的相关定义。`<sys/time.h>` 头文件包含了 `timeval` 结构体的定义，用于设置超时时间。`<cstring>` 头文件包含了 `memset()` 函数的定义，用于初始化文件描述符集合。
+1. **Socket类型**：
+   - TCP服务器使用`SOCK_STREAM`作为套接字类型，这表示它使用的是流式套接字，即TCP套接字。
+   - UDP服务器使用`SOCK_DGRAM`作为套接字类型，表示它使用的是数据报套接字，即UDP套接字。
 
-2. **使用 `select()` 函数**：
-   ```cpp
-   fd_set rfds;
-   FD_ZERO(&rfds);
-   FD_SET(listen_sock, &rfds);
+2. **通信方式**：
+   - TCP服务器使用`accept`函数来接受客户端的连接，并在连接建立后通过`recv`函数来接收客户端发送的数据。
+   - UDP服务器使用`recvfrom`函数来直接从客户端接收数据，而不需要事先建立连接。
 
-   struct timeval tv;
-   tv.tv_sec = 5;  // 设置超时时间为 5 秒
-   tv.tv_usec = 0;
+3. **连接性**：
+   - TCP服务器是面向连接的，它需要先建立连接，然后在连接上进行数据交换。
+   - UDP服务器是无连接的，它不需要事先建立连接，每个数据包都是独立的。
 
-   int retval = select(listen_sock + 1, &rfds, NULL, NULL, &tv);
-   ```
-   - 首先，我们定义了一个文件描述符集合 `rfds`，并使用 `FD_ZERO()` 函数将其初始化为空集合。然后，使用 `FD_SET()` 函数将监听 socket `listen_sock` 加入到 `rfds` 中。
-   - 接下来，我们定义了一个 `timeval` 结构体变量 `tv`，用于设置超时时间。在这里，我们将超时时间设置为 5 秒。
-   - 最后，我们调用 `select()` 函数，该函数会阻塞等待指定的文件描述符集合上是否有可读事件发生，或者超时时间到达。如果超时时间到达，`select()` 函数会返回 0。如果有可读事件发生，`select()` 函数会返回大于 0 的值。
+4. **错误处理**：
+   - 在TCP服务器中，如果调用`accept`或`recv`函数失败，通常会通过打印错误信息并继续循环来处理错误。
+   - 在UDP服务器中，如果调用`recvfrom`函数失败，同样会通过打印错误信息并继续循环来处理错误。
 
-3. **处理 `select()` 函数的返回值**：
-   ```cpp
-   if (retval == -1) {
-       perror("select()");
-       exit(EXIT_FAILURE);
-   } else if (retval == 0) {
-       printf("Timeout occurred! No incoming connection.\n");
-       continue;
-   } else {
-       // 处理客户端连接
-   }
-   ```
-   - 如果 `select()` 函数返回值为 -1，则说明 `select()` 函数调用出错，我们打印错误信息并退出程序。
-   - 如果 `select()` 函数返回值为 0，则说明超时时间到达，没有新的客户端连接请求。我们打印相应的提示信息，然后继续下一轮循环，等待新的客户端连接。
-   - 如果 `select()` 函数返回值大于 0，则说明有新的客户端连接请求到达。我们执行后续的客户端连接处理逻辑。
+5. **数据接收**：
+   - 在TCP服务器中，接收到的数据存储在缓冲区中，然后通过解析函数进行解析。
+   - 在UDP服务器中，接收到的数据直接传递给解析函数进行解析，无需缓冲区。
 
-通过以上步骤，我们实现了在一定时间内未收到客户端连接时继续执行后续操作的超时机制。
+6. **监听方式**：
+   - 在TCP服务器中，使用`listen`函数来监听客户端的连接请求，并通过`accept`函数接受连接。
+   - 在UDP服务器中，无需监听连接请求，直接通过`recvfrom`函数接收数据报文。
+
+这些是TCP和UDP服务器之间的主要差异。主要的不同之处在于TCP是面向连接的、可靠的，而UDP是无连接的、不可靠的。因此，它们在处理连接、数据传输和错误处理方面有所不同。
+
+在UDP服务器（udpServer.cpp）和TCP服务器（tcpServer.cpp）之间，存在一些函数和代码语句的差异。以下是缺失的部分以及相应的差异：
+
+1. **TCP服务器缺失的部分**：
+   - TCP服务器使用`accept`函数来接受客户端的连接，并在连接建立后通过`recv`函数来接收客户端发送的数据。因此，TCP服务器需要额外的代码来处理连接请求和建立连接的过程。
+   - TCP服务器需要在主循环中调用`accept`函数来接受新的客户端连接，并在连接建立后创建新的线程或进程来处理该连接的数据交换。
+   - TCP服务器需要在结束通信后关闭连接，使用`close`函数关闭套接字。
+
+2. **UDP服务器缺失的部分**：
+   - UDP服务器无需调用`accept`函数或创建新的连接，因为UDP是无连接的。
+   - UDP服务器的主要任务是接收和处理客户端发送的数据报文，并在必要时对数据进行解析和处理。
+   - UDP服务器不需要在主循环中创建新的连接或关闭连接，因为每个数据报文都是独立的，无需维护连接状态。
+
+总的来说，TCP服务器和UDP服务器的工作方式有所不同，因此它们的代码结构和功能也会有所差异。TCP服务器需要处理连接的建立和维护，而UDP服务器则主要关注数据的接收和处理。
 
 
-第二：
-    将消息的创建和添加函数封装成一个类可以让代码更模块化、清晰，并提供更好的可扩展性。下面是一个示例代码，演示了如何创建一个名为 `MessageManager` 的类来管理消息的创建和添加：
+将消息解析的部分单独拿出来而不是放到 `myprotoRecv()` 函数中的主要原因是为了更好地分离关注点和提高代码的可维护性。通常来说，一个函数应该只负责一个特定的任务，而 `myprotoRecv()` 函数的主要职责是接收数据并将其存储到缓冲区中。将消息解析的部分分离出来，使得代码更清晰、更易读，同时也方便了对消息解析过程的修改和扩展。
 
-```cpp
-#include <iostream>
-#include <queue>
-#include "myprotocol.h" // 包含协议相关的头文件
+如果将消息解析的部分放到 `myprotoRecv()` 函数中，会导致函数职责不够清晰，增加了函数的复杂度，降低了代码的可读性和可维护性。此外，将消息解析部分提取出来可以使得 `myprotoRecv()` 函数更加通用，可以用于不同类型的数据接收，而不仅限于特定的消息解析。
 
-class MessageManager {
-public:
-    MessageManager() {} // 默认构造函数
+// 解析消息
+        MyProtoDecode myDecode;
+        myDecode.init();
 
-    void createAndAddMessages(std::queue<MyProtoMsg>& msgQueue) {
-        // 创建第一个消息
-        MyProtoMsg msg1;
-        // 设置第一个消息的头部和协议体字段
-        // ...
+        if(!myDecode.parser(buf, len)) {
+            std::cout << "Parser msg failed!" << std::endl;
+        } else {
+            std::cout << "Parser msg successful!" << std::endl;
+        }
 
-        // 将第一个消息添加到队列
-        msgQueue.push(msg1);
-
-        // 创建第二个消息
-        MyProtoMsg msg2;
-        // 设置第二个消息的头部和协议体字段
-        // ...
-
-        // 将第二个消息添加到队列
-        msgQueue.push(msg2);
-
-        // 可以根据需要创建更多的消息并添加到队列中
-    }
-};
-
-int main() {
-    // 创建消息队列
-    std::queue<MyProtoMsg> msgQueue;
-
-    // 创建 MessageManager 对象
-    MessageManager messageManager;
-
-    // 使用 MessageManager 对象创建并添加消息到队列中
-    messageManager.createAndAddMessages(msgQueue);
-
-    // 可以使用消息队列中的消息进行后续的操作，比如发送到服务器端等
-
-    return 0;
-}
-```
-
-在上面的示例中，`MessageManager` 类负责创建和添加消息，通过调用 `createAndAddMessages` 函数，将创建的消息添加到传入的消息队列中。这样做可以将消息管理的逻辑封装到一个独立的类中，使得代码更加模块化和可维护。
+        // 解析消息
+        MyProtoMsg* pMsg = NULL;

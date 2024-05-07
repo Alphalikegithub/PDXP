@@ -1,7 +1,7 @@
 CMakeFiles/client.dir/src/MessageManager.cpp.o: \
- /root/code/PDXP/myProtocol8/src/MessageManager.cpp \
+ /root/code/PDXP/myProtocol8-UDP/src/MessageManager.cpp \
  /usr/include/stdc-predef.h \
- /root/code/PDXP/myProtocol8/src/MessageManager.h \
+ /root/code/PDXP/myProtocol8-UDP/src/MessageManager.h \
  /usr/include/c++/4.8.2/queue /usr/include/c++/4.8.2/deque \
  /usr/include/c++/4.8.2/bits/stl_algobase.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
@@ -49,7 +49,7 @@ CMakeFiles/client.dir/src/MessageManager.cpp.o: \
  /usr/include/c++/4.8.2/bits/stl_function.h \
  /usr/include/c++/4.8.2/backward/binders.h \
  /usr/include/c++/4.8.2/bits/stl_queue.h \
- /root/code/PDXP/myProtocol8/src/myprotocol.h \
+ /root/code/PDXP/myProtocol8-UDP/src/myprotocol.h \
  /usr/include/c++/4.8.2/iostream /usr/include/c++/4.8.2/ostream \
  /usr/include/c++/4.8.2/ios /usr/include/c++/4.8.2/iosfwd \
  /usr/include/c++/4.8.2/bits/stringfwd.h \
@@ -110,7 +110,7 @@ CMakeFiles/client.dir/src/MessageManager.cpp.o: \
  /usr/include/c++/4.8.2/bits/ostream.tcc /usr/include/c++/4.8.2/istream \
  /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/string.h \
  /usr/include/c++/4.8.2/cstring \
- /root/code/PDXP/myProtocol8/src/../protobuf/cekong.pb.h \
+ /root/code/PDXP/myProtocol8-UDP/src/../protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \

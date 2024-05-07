@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol8
+CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol8-UDP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol8/build
+CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol8-UDP/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -69,65 +69,65 @@ include CMakeFiles/client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: ../tcpSocket/tcpClient.cpp
-CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -MF CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o.d -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -c /root/code/PDXP/myProtocol8/tcpSocket/tcpClient.cpp
+CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o: ../tcpSocket/udpClient.cpp
+CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o -MF CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o.d -o CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o -c /root/code/PDXP/myProtocol8-UDP/tcpSocket/udpClient.cpp
 
-CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8/tcpSocket/tcpClient.cpp > CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i
+CMakeFiles/client.dir/tcpSocket/udpClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/tcpSocket/udpClient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8-UDP/tcpSocket/udpClient.cpp > CMakeFiles/client.dir/tcpSocket/udpClient.cpp.i
 
-CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8/tcpSocket/tcpClient.cpp -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s
+CMakeFiles/client.dir/tcpSocket/udpClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/tcpSocket/udpClient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8-UDP/tcpSocket/udpClient.cpp -o CMakeFiles/client.dir/tcpSocket/udpClient.cpp.s
 
 CMakeFiles/client.dir/src/MessageManager.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/MessageManager.cpp.o: ../src/MessageManager.cpp
 CMakeFiles/client.dir/src/MessageManager.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/MessageManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/MessageManager.cpp.o -MF CMakeFiles/client.dir/src/MessageManager.cpp.o.d -o CMakeFiles/client.dir/src/MessageManager.cpp.o -c /root/code/PDXP/myProtocol8/src/MessageManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/MessageManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/MessageManager.cpp.o -MF CMakeFiles/client.dir/src/MessageManager.cpp.o.d -o CMakeFiles/client.dir/src/MessageManager.cpp.o -c /root/code/PDXP/myProtocol8-UDP/src/MessageManager.cpp
 
 CMakeFiles/client.dir/src/MessageManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/MessageManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8/src/MessageManager.cpp > CMakeFiles/client.dir/src/MessageManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8-UDP/src/MessageManager.cpp > CMakeFiles/client.dir/src/MessageManager.cpp.i
 
 CMakeFiles/client.dir/src/MessageManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/MessageManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8/src/MessageManager.cpp -o CMakeFiles/client.dir/src/MessageManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8-UDP/src/MessageManager.cpp -o CMakeFiles/client.dir/src/MessageManager.cpp.s
 
 CMakeFiles/client.dir/src/myProtocol.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/myProtocol.cpp.o: ../src/myProtocol.cpp
 CMakeFiles/client.dir/src/myProtocol.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/src/myProtocol.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/myProtocol.cpp.o -MF CMakeFiles/client.dir/src/myProtocol.cpp.o.d -o CMakeFiles/client.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol8/src/myProtocol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/src/myProtocol.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/myProtocol.cpp.o -MF CMakeFiles/client.dir/src/myProtocol.cpp.o.d -o CMakeFiles/client.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol8-UDP/src/myProtocol.cpp
 
 CMakeFiles/client.dir/src/myProtocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/myProtocol.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8/src/myProtocol.cpp > CMakeFiles/client.dir/src/myProtocol.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8-UDP/src/myProtocol.cpp > CMakeFiles/client.dir/src/myProtocol.cpp.i
 
 CMakeFiles/client.dir/src/myProtocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/myProtocol.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8/src/myProtocol.cpp -o CMakeFiles/client.dir/src/myProtocol.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8-UDP/src/myProtocol.cpp -o CMakeFiles/client.dir/src/myProtocol.cpp.s
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: ../protobuf/cekong.pb.cc
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/client.dir/protobuf/cekong.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/client.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol8/protobuf/cekong.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/client.dir/protobuf/cekong.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/client.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol8-UDP/protobuf/cekong.pb.cc
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/protobuf/cekong.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8/protobuf/cekong.pb.cc > CMakeFiles/client.dir/protobuf/cekong.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol8-UDP/protobuf/cekong.pb.cc > CMakeFiles/client.dir/protobuf/cekong.pb.cc.i
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/protobuf/cekong.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8/protobuf/cekong.pb.cc -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol8-UDP/protobuf/cekong.pb.cc -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.s
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o" \
+"CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o" \
 "CMakeFiles/client.dir/src/MessageManager.cpp.o" \
 "CMakeFiles/client.dir/src/myProtocol.cpp.o" \
 "CMakeFiles/client.dir/protobuf/cekong.pb.cc.o"
@@ -135,14 +135,14 @@ client_OBJECTS = \
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o
+client: CMakeFiles/client.dir/tcpSocket/udpClient.cpp.o
 client: CMakeFiles/client.dir/src/MessageManager.cpp.o
 client: CMakeFiles/client.dir/src/myProtocol.cpp.o
 client: CMakeFiles/client.dir/protobuf/cekong.pb.cc.o
 client: CMakeFiles/client.dir/build.make
 client: /usr/local/lib/libprotobuf.so
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/PDXP/myProtocol8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/PDXP/myProtocol8-UDP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +154,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	cd /root/code/PDXP/myProtocol8/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/code/PDXP/myProtocol8 /root/code/PDXP/myProtocol8 /root/code/PDXP/myProtocol8/build /root/code/PDXP/myProtocol8/build /root/code/PDXP/myProtocol8/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/code/PDXP/myProtocol8-UDP/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/code/PDXP/myProtocol8-UDP /root/code/PDXP/myProtocol8-UDP /root/code/PDXP/myProtocol8-UDP/build /root/code/PDXP/myProtocol8-UDP/build /root/code/PDXP/myProtocol8-UDP/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/client.dir/depend
 
