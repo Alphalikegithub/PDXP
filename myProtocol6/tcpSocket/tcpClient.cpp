@@ -47,7 +47,7 @@ int main(int argc,char* argv[])
     while(1) { // 循环发送消息
         myprotoSend(sock);
         // 在发送消息之后，可以添加适当的延迟，以模拟实际场景
-        sleep(10); // 1秒延迟
+        sleep(1); // 1秒延迟
     }
 
 	close(sock);
