@@ -13,16 +13,6 @@ void myProtoMsgPrint(MyProtoMsg & msg)
     std::cout << endl;
 
     // 打印 Protocol Buffers 格式的协议体
-    /* std::cout << "Body:" << std::endl;
-    std::cout << "Current Time: " << msg.body.current_time() << std::endl;
-    std::cout << "Device Status: " << msg.body.device_status() << std::endl;
-    std::cout << "Azimuth: " << msg.body.azimuth() << std::endl;
-    std::cout << "Elevation: " << msg.body.elevation() << std::endl;
-    std::cout << "Azimuth Offset: " << msg.body.azimuth_offset() << std::endl;
-    std::cout << "Elevation Offset: " << msg.body.elevation_offset() << std::endl;
-    std::cout << "Velocity: " << msg.body.velocity() << std::endl;
-    std::cout << "Distance: " << msg.body.distance() << std::endl;
-    std::cout << "Brightness: " << msg.body.brightness() << std::endl; */
     
     std::cout << "Body:" << std::endl;
     std::cout << "当前时刻: " << msg.body.current_time() << std::endl;

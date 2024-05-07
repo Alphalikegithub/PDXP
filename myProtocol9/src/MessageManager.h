@@ -10,7 +10,7 @@ public:
     MessageManager() {} // 默认构造函数
 
     // Function to create and add messages to the queue
-    void createAndAddMessages(std::queue<MyProtoMsg>& msgQueue);
+    void createAndAddMessages(std::queue<MyProtoMsg>& msgQueue, int numMessages);
 };
 
 #endif // MESSAGE_MANAGER_H

@@ -7,7 +7,7 @@ message MyMessageBody {
   假设当前时刻为 2024 年 5 月 6 日 10 时 30 分 15 秒，可以表示为： 
   uint64_t current_time = 1735227015000;（这个值表示从 Unix 时间戳起点开始的毫秒数） */
   uint64 current_time = 1;       // 当前时刻，量化单位为0.1ms  
-  uint32 device_status = 2;       // 设备状态 8bit
+  string device_status = 2;       // 设备状态 8bit
   float azimuth = 3;              // 方位角，360°
   float elevation = 4;            // 俯仰角，360°
   int32 azimuth_offset = 5;      // 方位脱靶量，0.5＂

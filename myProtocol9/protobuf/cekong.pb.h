@@ -174,8 +174,8 @@ class MyMessageBody final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCurrentTimeFieldNumber = 1,
     kDeviceStatusFieldNumber = 2,
+    kCurrentTimeFieldNumber = 1,
     kAzimuthFieldNumber = 3,
     kElevationFieldNumber = 4,
     kAzimuthOffsetFieldNumber = 5,
@@ -184,6 +184,20 @@ class MyMessageBody final :
     kDistanceFieldNumber = 8,
     kBrightnessFieldNumber = 9,
   };
+  // string device_status = 2;
+  void clear_device_status();
+  const std::string& device_status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_device_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_device_status();
+  PROTOBUF_NODISCARD std::string* release_device_status();
+  void set_allocated_device_status(std::string* device_status);
+  private:
+  const std::string& _internal_device_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_device_status(const std::string& value);
+  std::string* _internal_mutable_device_status();
+  public:
+
   // uint64 current_time = 1;
   void clear_current_time();
   uint64_t current_time() const;
@@ -191,15 +205,6 @@ class MyMessageBody final :
   private:
   uint64_t _internal_current_time() const;
   void _internal_set_current_time(uint64_t value);
-  public:
-
-  // uint32 device_status = 2;
-  void clear_device_status();
-  uint32_t device_status() const;
-  void set_device_status(uint32_t value);
-  private:
-  uint32_t _internal_device_status() const;
-  void _internal_set_device_status(uint32_t value);
   public:
 
   // float azimuth = 3;
@@ -273,8 +278,8 @@ class MyMessageBody final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_status_;
     uint64_t current_time_;
-    uint32_t device_status_;
     float azimuth_;
     float elevation_;
     int32_t azimuth_offset_;
@@ -318,24 +323,54 @@ inline void MyMessageBody::set_current_time(uint64_t value) {
   // @@protoc_insertion_point(field_set:MyMessageBody.current_time)
 }
 
-// uint32 device_status = 2;
+// string device_status = 2;
 inline void MyMessageBody::clear_device_status() {
-  _impl_.device_status_ = 0u;
+  _impl_.device_status_.ClearToEmpty();
 }
-inline uint32_t MyMessageBody::_internal_device_status() const {
-  return _impl_.device_status_;
-}
-inline uint32_t MyMessageBody::device_status() const {
+inline const std::string& MyMessageBody::device_status() const {
   // @@protoc_insertion_point(field_get:MyMessageBody.device_status)
   return _internal_device_status();
 }
-inline void MyMessageBody::_internal_set_device_status(uint32_t value) {
-  
-  _impl_.device_status_ = value;
-}
-inline void MyMessageBody::set_device_status(uint32_t value) {
-  _internal_set_device_status(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MyMessageBody::set_device_status(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.device_status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:MyMessageBody.device_status)
+}
+inline std::string* MyMessageBody::mutable_device_status() {
+  std::string* _s = _internal_mutable_device_status();
+  // @@protoc_insertion_point(field_mutable:MyMessageBody.device_status)
+  return _s;
+}
+inline const std::string& MyMessageBody::_internal_device_status() const {
+  return _impl_.device_status_.Get();
+}
+inline void MyMessageBody::_internal_set_device_status(const std::string& value) {
+  
+  _impl_.device_status_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MyMessageBody::_internal_mutable_device_status() {
+  
+  return _impl_.device_status_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MyMessageBody::release_device_status() {
+  // @@protoc_insertion_point(field_release:MyMessageBody.device_status)
+  return _impl_.device_status_.Release();
+}
+inline void MyMessageBody::set_allocated_device_status(std::string* device_status) {
+  if (device_status != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.device_status_.SetAllocated(device_status, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.device_status_.IsDefault()) {
+    _impl_.device_status_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:MyMessageBody.device_status)
 }
 
 // float azimuth = 3;

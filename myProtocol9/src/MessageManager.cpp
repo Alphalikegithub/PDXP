@@ -1,58 +1,55 @@
 // MessageManager.cpp
 #include "MessageManager.h"
 
-void MessageManager::createAndAddMessages(std::queue<MyProtoMsg>& msgQueue) {
-    // 创建第一个消息
-    MyProtoMsg msg1;
-    msg1.head.MID = 12345; // 设置任务标志
-    msg1.head.SID = 987654321; // 设置信源
-    msg1.head.DID = 123456789; // 设置信宿
-    msg1.head.BID = 987654321; // 设置信息分类标志
-    msg1.head.No = 1; // 设置包序号
-    msg1.head.FLAG = 0; // 设置信息处理标志
-    msg1.head.Backup = 0; // 设置备用字段
-    msg1.head.DATE = 2405; // 设置发送日期
-    msg1.head.TIME = 225859; // 设置发送时间
+void MessageManager::createAndAddMessages(std::queue<MyProtoMsg>& msgQueue, int numMessages) {
+    std::random_device rd;  // 随机数种子
+    std::mt19937 gen(rd()); // 使用 Mersenne Twister 作为随机数生成器
+    /* std::mt19937: 这是一个 Mersenne Twister 伪随机数生成器类，它是一种非常高质量的伪随机数算法 */
+    std::uniform_int_distribution<int> distribution(1, 1000); // 均匀分布，用于生成随机数
+    std::uniform_int_distribution<int> flagDistribution(0, 1); // 用于生成随机的FLAG值
+    //std::uniform_int_distribution<int> statusDistribution(0, 15); // 用于生成随机的设备状态值
 
-    // 使用 Protocol Buffers 格式直接设置消息的协议体字段
-    msg1.body.set_current_time(1735227015000); // 设置当前时刻
-    msg1.body.set_device_status(1); // 设置设备状态
-    msg1.body.set_azimuth(45.0); // 设置方位角
-    msg1.body.set_elevation(30.0); // 设置俯仰角
-    msg1.body.set_azimuth_offset(100); // 设置方位脱靶量
-    msg1.body.set_elevation_offset(-50); // 设置俯仰脱靶量
-    msg1.body.set_velocity(0.5); // 设置测速值
-    msg1.body.set_distance(1000); // 设置测距值
-    msg1.body.set_brightness(5); // 设置目标亮度
+    // 16种四位二进制数，以字符串形式存储
+    std::vector<std::string> deviceStatusValues = {
+        "0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111",
+        "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"
+    };
 
-    // 添加第一个消息到队列
-    msgQueue.push(msg1);
+    for (int i = 0; i < numMessages; ++i) {
+        MyProtoMsg msg;
 
-    // 创建第二个消息
-    MyProtoMsg msg2;
-    msg2.head.MID = 54321; // 设置任务标志
-    msg2.head.SID = 123456789; // 设置信源
-    msg2.head.DID = 987654321; // 设置信宿
-    msg2.head.BID = 123456789; // 设置信息分类标志
-    msg2.head.No = 2; // 设置包序号
-    msg2.head.FLAG = 1; // 设置信息处理标志
-    msg2.head.Backup = 0; // 设置备用字段
-    msg2.head.DATE = 2405; // 设置发送日期
-    msg2.head.TIME = 235860; // 设置发送时间
+        // 随机生成消息头部字段
+        msg.head.MID = distribution(gen); // 任务标志
+        msg.head.SID = distribution(gen); // 信源
+        msg.head.DID = distribution(gen); // 信宿
+        msg.head.BID = distribution(gen); // 信息分类标志
+        msg.head.No = i + 1; // 包序号，从1开始
+        //msg.head.FLAG = flagDistribution(gen); // 信息处理标志 随机设置为0或1 
+        /* distribution(gen)生成了一个范围在1到1000之间的随机整数,对于任何整数x，x % 2的结果只能是0或1 */
+        msg.head.FLAG = distribution(gen) % 2; // 随机设置为0或1 
+        msg.head.Backup = 0; // 备用字段
+        msg.head.DATE = 2405; // 发送日期
+        msg.head.TIME = 225859; // 发送时间
 
-    // 使用 Protocol Buffers 格式直接设置消息的协议体字段
-    msg2.body.set_current_time(1715012458); // 设置当前时刻
-    msg2.body.set_device_status(2); // 设置设备状态
-    msg2.body.set_azimuth(90.0); // 设置方位角
-    msg2.body.set_elevation(60.0); // 设置俯仰角
-    msg2.body.set_azimuth_offset(200); // 设置方位脱靶量
-    msg2.body.set_elevation_offset(-100); // 设置俯仰脱靶量
-    msg2.body.set_velocity(1.0); // 设置测速值
-    msg2.body.set_distance(2000); // 设置测距值
-    msg2.body.set_brightness(8); // 设置目标亮度
+        /* 当前时间戳: 1715096190 秒
+           当前年月日时分秒: 2024-05-07 23:36:30 */
+        // 随机生成消息体字段
+        msg.body.set_current_time(i + 1715096190); // 当前时刻
+        /* *******************设备状态单独设置***************** */
+        int randomIndex = distribution(gen) % deviceStatusValues.size(); // 生成随机索引
+        std::string randomStatus = deviceStatusValues[randomIndex]; // 获取随机设备状态
+        msg.body.set_device_status(randomStatus); // 直接设置设备状态为四位二进制字符串
+        /* ************************************************** */
+        //msg.body.set_device_status(statusDistribution(gen)); // 设备状态
+        msg.body.set_azimuth(distribution(gen)); // 方位角
+        msg.body.set_elevation(distribution(gen)); // 俯仰角
+        msg.body.set_azimuth_offset(distribution(gen)); // 方位脱靶量
+        msg.body.set_elevation_offset(distribution(gen)); // 俯仰脱靶量
+        msg.body.set_velocity(distribution(gen)); // 测速值
+        msg.body.set_distance(distribution(gen)); // 测距值
+        msg.body.set_brightness(distribution(gen)); // 目标亮度
 
-    // 添加第二个消息到队列
-    msgQueue.push(msg2);
-
-    // 可以根据需要创建更多的消息并添加到队列中
+        // 添加消息到队列
+        msgQueue.push(msg);
+    }
 }

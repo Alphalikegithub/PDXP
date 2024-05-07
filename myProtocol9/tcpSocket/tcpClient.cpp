@@ -45,8 +45,16 @@ int main(int argc, char* argv[]) {
     // 创建 MessageManager 对象
     MessageManager messageManager;
 
-    // 使用 MessageManager 对象创建并添加消息到队列中
-    messageManager.createAndAddMessages(msgQueue);
+    /* ***************新增代码******************* */
+    // 指定要生成的消息数量
+    int numMessages = 10;
+    /* ***************************************** */
+
+    /* // 使用 MessageManager 对象创建并添加消息到队列中
+    messageManager.createAndAddMessages(msgQueue); */
+
+    // 使用 MessageManager 对象创建并添加指定数量的消息到队列中
+    messageManager.createAndAddMessages(msgQueue, numMessages);
 
     // 可以使用消息队列中的消息进行后续的操作，比如发送到服务器端等
 

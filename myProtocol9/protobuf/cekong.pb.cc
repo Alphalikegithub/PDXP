@@ -22,8 +22,8 @@ namespace _pbi = _pb::internal;
 
 PROTOBUF_CONSTEXPR MyMessageBody::MyMessageBody(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.current_time_)*/uint64_t{0u}
-  , /*decltype(_impl_.device_status_)*/0u
+    /*decltype(_impl_.device_status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.current_time_)*/uint64_t{0u}
   , /*decltype(_impl_.azimuth_)*/0
   , /*decltype(_impl_.elevation_)*/0
   , /*decltype(_impl_.azimuth_offset_)*/0
@@ -72,7 +72,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_cekong_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014cekong.proto\"\312\001\n\rMyMessageBody\022\024\n\014curr"
-  "ent_time\030\001 \001(\004\022\025\n\rdevice_status\030\002 \001(\r\022\017\n"
+  "ent_time\030\001 \001(\004\022\025\n\rdevice_status\030\002 \001(\t\022\017\n"
   "\007azimuth\030\003 \001(\002\022\021\n\televation\030\004 \001(\002\022\026\n\016azi"
   "muth_offset\030\005 \001(\005\022\030\n\020elevation_offset\030\006 "
   "\001(\005\022\020\n\010velocity\030\007 \001(\002\022\020\n\010distance\030\010 \001(\r\022"
@@ -110,8 +110,8 @@ MyMessageBody::MyMessageBody(const MyMessageBody& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   MyMessageBody* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.current_time_){}
-    , decltype(_impl_.device_status_){}
+      decltype(_impl_.device_status_){}
+    , decltype(_impl_.current_time_){}
     , decltype(_impl_.azimuth_){}
     , decltype(_impl_.elevation_){}
     , decltype(_impl_.azimuth_offset_){}
@@ -122,6 +122,14 @@ MyMessageBody::MyMessageBody(const MyMessageBody& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.device_status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.device_status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_device_status().empty()) {
+    _this->_impl_.device_status_.Set(from._internal_device_status(), 
+      _this->GetArenaForAllocation());
+  }
   ::memcpy(&_impl_.current_time_, &from._impl_.current_time_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.brightness_) -
     reinterpret_cast<char*>(&_impl_.current_time_)) + sizeof(_impl_.brightness_));
@@ -133,8 +141,8 @@ inline void MyMessageBody::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.current_time_){uint64_t{0u}}
-    , decltype(_impl_.device_status_){0u}
+      decltype(_impl_.device_status_){}
+    , decltype(_impl_.current_time_){uint64_t{0u}}
     , decltype(_impl_.azimuth_){0}
     , decltype(_impl_.elevation_){0}
     , decltype(_impl_.azimuth_offset_){0}
@@ -144,6 +152,10 @@ inline void MyMessageBody::SharedCtor(
     , decltype(_impl_.brightness_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.device_status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.device_status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 MyMessageBody::~MyMessageBody() {
@@ -157,6 +169,7 @@ MyMessageBody::~MyMessageBody() {
 
 inline void MyMessageBody::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.device_status_.Destroy();
 }
 
 void MyMessageBody::SetCachedSize(int size) const {
@@ -169,6 +182,7 @@ void MyMessageBody::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.device_status_.ClearToEmpty();
   ::memset(&_impl_.current_time_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.brightness_) -
       reinterpret_cast<char*>(&_impl_.current_time_)) + sizeof(_impl_.brightness_));
@@ -189,11 +203,13 @@ const char* MyMessageBody::_InternalParse(const char* ptr, ::_pbi::ParseContext*
         } else
           goto handle_unusual;
         continue;
-      // uint32 device_status = 2;
+      // string device_status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.device_status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_device_status();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "MyMessageBody.device_status"));
         } else
           goto handle_unusual;
         continue;
@@ -288,10 +304,14 @@ uint8_t* MyMessageBody::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_current_time(), target);
   }
 
-  // uint32 device_status = 2;
-  if (this->_internal_device_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_device_status(), target);
+  // string device_status = 2;
+  if (!this->_internal_device_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_device_status().data(), static_cast<int>(this->_internal_device_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MyMessageBody.device_status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_device_status(), target);
   }
 
   // float azimuth = 3;
@@ -364,14 +384,16 @@ size_t MyMessageBody::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string device_status = 2;
+  if (!this->_internal_device_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_device_status());
+  }
+
   // uint64 current_time = 1;
   if (this->_internal_current_time() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_current_time());
-  }
-
-  // uint32 device_status = 2;
-  if (this->_internal_device_status() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_device_status());
   }
 
   // float azimuth = 3;
@@ -439,11 +461,11 @@ void MyMessageBody::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_device_status().empty()) {
+    _this->_internal_set_device_status(from._internal_device_status());
+  }
   if (from._internal_current_time() != 0) {
     _this->_internal_set_current_time(from._internal_current_time());
-  }
-  if (from._internal_device_status() != 0) {
-    _this->_internal_set_device_status(from._internal_device_status());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_azimuth = from._internal_azimuth();
@@ -494,7 +516,13 @@ bool MyMessageBody::IsInitialized() const {
 
 void MyMessageBody::InternalSwap(MyMessageBody* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.device_status_, lhs_arena,
+      &other->_impl_.device_status_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(MyMessageBody, _impl_.brightness_)
       + sizeof(MyMessageBody::_impl_.brightness_)
