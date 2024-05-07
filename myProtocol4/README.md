@@ -1,0 +1,3 @@
+在myProtocol4中：
+引入了protobuf
+并对原来的目录结构做了优化：分离出main.cpp和MyProtocol.cpp和myprotocol.h三个文件
