@@ -40,15 +40,15 @@ int main(int argc,char* argv[])
 		return -2;
 	}
 
-	/* //连接成功，进行数据发送-------------这里可以改为循环发送
-	len = myprotoSend(sock); */
+	//连接成功，进行数据发送-------------这里可以改为循环发送
+	len = myprotoSend(sock);
 
-	 //连接成功，进行数据发送
+	/* //连接成功，进行数据发送
     while(1) { // 循环发送消息
         myprotoSend(sock);
         // 在发送消息之后，可以添加适当的延迟，以模拟实际场景
         sleep(1); // 1秒延迟
-    }
+    } */
 
 	close(sock);
 	return 0;
@@ -92,7 +92,7 @@ int myprotoSend(int sock) //-----------这里改为字符串解析，发送自�
 	send(sock, pData, len, 0);
 
 
-	//------放入第一个消息
+	//------放入第二个消息
 	/************* 创建并设置第二个消息的协议头************ */
     //msg2.head.VER = 1;//设置版本号
     msg2.head.MID = 54321; // 设置任务标志
