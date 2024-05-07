@@ -1,0 +1,22 @@
+第一步：
+进入/root/code/PDXP/myProtocol4/protobuf目录下
+protoc -I=./ --cpp_out=./ ./cekong.proto 
+
+第二步：
+进入/root/code/PDXP/myProtocol4目录
+g++ MyProtocol.cpp main.cpp ./protobuf/cekong.pb.cc -I ./ -o test -lprotobuf -std=c++11
+然后 ./test 
+
+------------------------------------------------------
+更新：
+添加CMakeFiles后只需要执行下面的命令：
+第一步：
+    在/root/code/PDXP/myProtocol4/protobuf目录下
+    执行protoc -I=./ --cpp_out=./ ./cekong.proto ，会生成cekong.pb.cc和cekong.pb.h文件
+第二步：
+    在/root/code/PDXP/myProtocol4/build下,执行:
+    cmake ..
+    make
+    ./test
+
+
