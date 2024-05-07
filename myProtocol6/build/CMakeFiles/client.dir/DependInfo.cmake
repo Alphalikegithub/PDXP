@@ -1,16 +1,17 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/root/PDXP/myProtocol6/protobuf/cekong.pb.cc" "/root/PDXP/myProtocol6/build/CMakeFiles/client.dir/protobuf/cekong.pb.cc.o"
+  "/root/PDXP/myProtocol6/src/MyProtocol.cpp" "/root/PDXP/myProtocol6/build/CMakeFiles/client.dir/src/MyProtocol.cpp.o"
+  "/root/PDXP/myProtocol6/tcpSocket/tcpClient.cpp" "/root/PDXP/myProtocol6/build/CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/code/PDXP/myProtocol6/protobuf/cekong.pb.cc" "CMakeFiles/client.dir/protobuf/cekong.pb.cc.o" "gcc" "CMakeFiles/client.dir/protobuf/cekong.pb.cc.o.d"
-  "/root/code/PDXP/myProtocol6/src/MyProtocol.cpp" "CMakeFiles/client.dir/src/MyProtocol.cpp.o" "gcc" "CMakeFiles/client.dir/src/MyProtocol.cpp.o.d"
-  "/root/code/PDXP/myProtocol6/tcpSocket/tcpClient.cpp" "CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o" "gcc" "CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

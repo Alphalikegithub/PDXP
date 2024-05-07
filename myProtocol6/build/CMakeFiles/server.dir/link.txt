@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o CMakeFiles/server.dir/src/MyProtocol.cpp.o CMakeFiles/server.dir/protobuf/cekong.pb.cc.o -o server  -Wl,-rpath,/usr/local/lib /usr/local/lib/libprotobuf.so -lpthread 
+/usr/bin/c++    -rdynamic CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o CMakeFiles/server.dir/src/MyProtocol.cpp.o CMakeFiles/server.dir/protobuf/cekong.pb.cc.o  -o server  -Wl,-rpath,/usr/local/lib /usr/local/lib/libprotobuf.so -lpthread 
