@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/code/PDXP/myProtocol6/protobuf/cekong.pb.cc" "CMakeFiles/server.dir/protobuf/cekong.pb.cc.o" "gcc" "CMakeFiles/server.dir/protobuf/cekong.pb.cc.o.d"
-  "/root/code/PDXP/myProtocol6/src/MyProtocol.cpp" "CMakeFiles/server.dir/src/MyProtocol.cpp.o" "gcc" "CMakeFiles/server.dir/src/MyProtocol.cpp.o.d"
-  "/root/code/PDXP/myProtocol6/tcpSocket/tcpServer.cpp" "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o" "gcc" "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o.d"
+  "/root/code/PDXP/myProtocol7/protobuf/cekong.pb.cc" "CMakeFiles/server.dir/protobuf/cekong.pb.cc.o" "gcc" "CMakeFiles/server.dir/protobuf/cekong.pb.cc.o.d"
+  "/root/code/PDXP/myProtocol7/src/MyProtocol.cpp" "CMakeFiles/server.dir/src/MyProtocol.cpp.o" "gcc" "CMakeFiles/server.dir/src/MyProtocol.cpp.o.d"
+  "/root/code/PDXP/myProtocol7/tcpSocket/tcpServer.cpp" "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o" "gcc" "CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o.d"
   )
 
 # Targets to which this target links.

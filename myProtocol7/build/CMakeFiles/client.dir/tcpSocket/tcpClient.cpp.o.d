@@ -1,5 +1,5 @@
 CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
- /root/code/PDXP/myProtocol6/tcpSocket/tcpClient.cpp \
+ /root/code/PDXP/myProtocol7/tcpSocket/tcpClient.cpp \
  /usr/include/stdc-predef.h /usr/include/sys/types.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
@@ -28,7 +28,7 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h \
- /root/code/PDXP/myProtocol6/tcpSocket/../src/myprotocol.h \
+ /root/code/PDXP/myProtocol7/tcpSocket/../src/myprotocol.h \
  /usr/include/c++/4.8.2/iostream \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
@@ -112,7 +112,7 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: \
  /usr/include/c++/4.8.2/bits/vector.tcc \
  /usr/include/c++/4.8.2/bits/stl_heap.h \
  /usr/include/c++/4.8.2/bits/stl_queue.h /usr/include/c++/4.8.2/cstring \
- /root/code/PDXP/myProtocol6/tcpSocket/../src/../protobuf/cekong.pb.h \
+ /root/code/PDXP/myProtocol7/tcpSocket/../src/../protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \

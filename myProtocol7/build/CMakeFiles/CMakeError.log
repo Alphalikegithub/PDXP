@@ -1,23 +1,23 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp
+Change Dir: /root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f361d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f361d.dir/build.make CMakeFiles/cmTC_f361d.dir/build
-gmake[1]: Entering directory `/root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f361d.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f361d.dir/src.c.o -c /root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_f361d
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f361d.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_f361d.dir/src.c.o -o cmTC_f361d 
-CMakeFiles/cmTC_f361d.dir/src.c.o: In function `main':
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fad8c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fad8c.dir/build.make CMakeFiles/cmTC_fad8c.dir/build
+gmake[1]: Entering directory `/root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fad8c.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_fad8c.dir/src.c.o -c /root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_fad8c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fad8c.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_fad8c.dir/src.c.o -o cmTC_fad8c 
+CMakeFiles/cmTC_fad8c.dir/src.c.o: In function `main':
 src.c:(.text+0x2d): undefined reference to `pthread_create'
 src.c:(.text+0x39): undefined reference to `pthread_detach'
 src.c:(.text+0x45): undefined reference to `pthread_cancel'
 src.c:(.text+0x56): undefined reference to `pthread_join'
 src.c:(.text+0x6a): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_f361d] Error 1
-gmake[1]: Leaving directory `/root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_f361d/fast] Error 2
+gmake[1]: *** [cmTC_fad8c] Error 1
+gmake[1]: Leaving directory `/root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_fad8c/fast] Error 2
 
 
 Source file was:
@@ -42,20 +42,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp
+Change Dir: /root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_86719/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_86719.dir/build.make CMakeFiles/cmTC_86719.dir/build
-gmake[1]: Entering directory `/root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_86719.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_86719.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_86719
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86719.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_86719.dir/CheckFunctionExists.c.o -o cmTC_86719  -lpthreads 
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_07f13/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_07f13.dir/build.make CMakeFiles/cmTC_07f13.dir/build
+gmake[1]: Entering directory `/root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_07f13.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_07f13.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_07f13
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07f13.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_07f13.dir/CheckFunctionExists.c.o -o cmTC_07f13  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_86719] Error 1
-gmake[1]: Leaving directory `/root/code/PDXP/myProtocol6/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_86719/fast] Error 2
+gmake[1]: *** [cmTC_07f13] Error 1
+gmake[1]: Leaving directory `/root/code/PDXP/myProtocol7/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_07f13/fast] Error 2
 
 
 

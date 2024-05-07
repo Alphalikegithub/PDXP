@@ -9,64 +9,67 @@
 #include "../src/myprotocol.h"
 
 int myprotoSend(int sock);
+void sendAllMessages(int sock);
 
 int main(int argc,char* argv[])
 {
-	if(argc != 3)
-	{
-		printf("USage:%s ip port\n", argv[0]);
-		return 0;
-	}
+    if(argc != 3)
+    {
+        printf("USage:%s ip port\n", argv[0]);
+        return 0;
+    }
 
-	//开始创建socket
-	int sock = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
-	if(sock < 0)
-	{
-		printf("socket create failure\n");
-		return -1;
-	}
+    //开始创建socket
+    int sock = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+    if(sock < 0)
+    {
+        printf("socket create failure\n");
+        return -1;
+    }
 
-	//使用connect与服务器地址，端口连接，需要定义服务端信息：地址结构体
-	struct sockaddr_in server;
-	server.sin_family = AF_INET; //IPV4
-	server.sin_port = htons(atoi(argv[2])); //atoi将字符串转数字
-	server.sin_addr.s_addr = inet_addr(argv[1]); //不直接使用htonl,因为传入的是字符串IP地址，使用inet_addr正好对字符串IP,转网络大端所用字节序
+    //使用connect与服务器地址，端口连接，需要定义服务端信息：地址结构体
+    struct sockaddr_in server;
+    server.sin_family = AF_INET; //IPV4
+    server.sin_port = htons(atoi(argv[2])); //atoi将字符串转数字
+    server.sin_addr.s_addr = inet_addr(argv[1]); //不直接使用htonl,因为传入的是字符串IP地址，使用inet_addr正好对字符串IP,转网络大端所用字节序
 
-	unsigned int len = sizeof(struct sockaddr_in); //获取socket地址结构体长度
+    unsigned int len = sizeof(struct sockaddr_in); //获取socket地址结构体长度
 
-	if(connect(sock,(struct sockaddr*)&server,len)<0)
-	{
-		printf("socket connect failure\n");
-		return -2;
-	}
+    if(connect(sock,(struct sockaddr*)&server,len)<0)
+    {
+        printf("socket connect failure\n");
+        return -2;
+    }
 
-	//连接成功，进行数据发送-------------这里可以改为循环发送
-	len = myprotoSend(sock);
+    //连接成功，进行数据发送
+    sendAllMessages(sock);
 
-	/* //连接成功，进行数据发送
-    while(1) { // 循环发送消息
-        myprotoSend(sock);
-        // 在发送消息之后，可以添加适当的延迟，以模拟实际场景
-        sleep(1); // 1秒延迟
-    } */
-
-	close(sock);
-	return 0;
+    close(sock);
+    return 0;
 }
 
-int myprotoSend(int sock) //-----------这里改为字符串解析，发送自己解析的Json数据
+int myprotoSend(int sock, MyProtoMsg& msg)
 {
-
-	uint32_t len = 0;
+    uint32_t len = 0;
     uint8_t * pData = nullptr;
 
-	MyProtoMsg msg1;
-	MyProtoMsg msg2;
-	/* 打包 */
-	MyProtoEncode myEncode;
+    /* 打包 */
+    MyProtoEncode myEncode;
 
-	//------放入第一个消息
-	msg1.head.MID = 12345; // 设置任务标志
+    pData = myEncode.encode(&msg, len);
+
+    send(sock, pData, len, 0);
+
+    return 0;
+}
+
+void sendAllMessages(int sock)
+{
+    MyProtoMsg msg1;
+    MyProtoMsg msg2;
+
+    //------放入第一个消息
+    msg1.head.MID = 12345; // 设置任务标志
     msg1.head.SID = 987654321; // 设置信源
     msg1.head.DID = 123456789; // 设置信宿
     msg1.head.BID = 987654321; // 设置信息分类标志
@@ -87,13 +90,11 @@ int myprotoSend(int sock) //-----------这里改为字符串解析，发送自�
     msg1.body.set_distance(1000);             // 设置测距值
     msg1.body.set_brightness(5);              // 设置目标亮度
 
-	pData = myEncode.encode(&msg1,len);
+    // 发送第一个消息
+    myprotoSend(sock, msg1);
 
-	send(sock, pData, len, 0);
-
-
-	//------放入第二个消息
-	/************* 创建并设置第二个消息的协议头************ */
+    //------放入第二个消息
+    /************* 创建并设置第二个消息的协议头************ */
     //msg2.head.VER = 1;//设置版本号
     msg2.head.MID = 54321; // 设置任务标志
     msg2.head.SID = 123456789; // 设置信源
@@ -116,10 +117,6 @@ int myprotoSend(int sock) //-----------这里改为字符串解析，发送自�
     msg2.body.set_distance(2000);             // 设置测距值
     msg2.body.set_brightness(8);              // 设置目标亮度
 
-	// 编码第二个消息
-	pData = myEncode.encode(&msg2, len);
-
-	send(sock, pData, len, 0);
-
-	return 0;
+    // 发送第二个消息
+    myprotoSend(sock, msg2);
 }
