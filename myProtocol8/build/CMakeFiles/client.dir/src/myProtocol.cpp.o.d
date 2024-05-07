@@ -1,6 +1,6 @@
-CMakeFiles/server.dir/src/MyProtocol.cpp.o: \
- /root/code/PDXP/myProtocol7/src/MyProtocol.cpp \
- /usr/include/stdc-predef.h /root/code/PDXP/myProtocol7/src/myprotocol.h \
+CMakeFiles/client.dir/src/myProtocol.cpp.o: \
+ /root/code/PDXP/myProtocol8/src/myProtocol.cpp \
+ /usr/include/stdc-predef.h /root/code/PDXP/myProtocol8/src/myprotocol.h \
  /usr/include/c++/4.8.2/iostream \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -106,7 +106,7 @@ CMakeFiles/server.dir/src/MyProtocol.cpp.o: \
  /usr/include/c++/4.8.2/bits/stl_heap.h \
  /usr/include/c++/4.8.2/bits/stl_queue.h /usr/include/string.h \
  /usr/include/c++/4.8.2/cstring \
- /root/code/PDXP/myProtocol7/src/../protobuf/cekong.pb.h \
+ /root/code/PDXP/myProtocol8/src/../protobuf/cekong.pb.h \
  /usr/include/c++/4.8.2/limits \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \

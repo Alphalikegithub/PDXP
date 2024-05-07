@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol7
+CMAKE_SOURCE_DIR = /root/code/PDXP/myProtocol8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol7/build
+CMAKE_BINARY_DIR = /root/code/PDXP/myProtocol8/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol7/build/CMakeFiles /root/code/PDXP/myProtocol7/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8/build/CMakeFiles /root/code/PDXP/myProtocol8/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol7/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/PDXP/myProtocol8/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,32 +169,56 @@ protobuf/cekong.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/protobuf/cekong.pb.cc.s
 .PHONY : protobuf/cekong.pb.cc.s
 
-src/MyProtocol.o: src/MyProtocol.cpp.o
-.PHONY : src/MyProtocol.o
+src/MessageManager.o: src/MessageManager.cpp.o
+.PHONY : src/MessageManager.o
 
 # target to build an object file
-src/MyProtocol.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.o
-.PHONY : src/MyProtocol.cpp.o
+src/MessageManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MessageManager.cpp.o
+.PHONY : src/MessageManager.cpp.o
 
-src/MyProtocol.i: src/MyProtocol.cpp.i
-.PHONY : src/MyProtocol.i
+src/MessageManager.i: src/MessageManager.cpp.i
+.PHONY : src/MessageManager.i
 
 # target to preprocess a source file
-src/MyProtocol.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.i
-.PHONY : src/MyProtocol.cpp.i
+src/MessageManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MessageManager.cpp.i
+.PHONY : src/MessageManager.cpp.i
 
-src/MyProtocol.s: src/MyProtocol.cpp.s
-.PHONY : src/MyProtocol.s
+src/MessageManager.s: src/MessageManager.cpp.s
+.PHONY : src/MessageManager.s
 
 # target to generate assembly for a file
-src/MyProtocol.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MyProtocol.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/MyProtocol.cpp.s
-.PHONY : src/MyProtocol.cpp.s
+src/MessageManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/MessageManager.cpp.s
+.PHONY : src/MessageManager.cpp.s
+
+src/myProtocol.o: src/myProtocol.cpp.o
+.PHONY : src/myProtocol.o
+
+# target to build an object file
+src/myProtocol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/myProtocol.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/myProtocol.cpp.o
+.PHONY : src/myProtocol.cpp.o
+
+src/myProtocol.i: src/myProtocol.cpp.i
+.PHONY : src/myProtocol.i
+
+# target to preprocess a source file
+src/myProtocol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/myProtocol.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/myProtocol.cpp.i
+.PHONY : src/myProtocol.cpp.i
+
+src/myProtocol.s: src/myProtocol.cpp.s
+.PHONY : src/myProtocol.s
+
+# target to generate assembly for a file
+src/myProtocol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/myProtocol.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/myProtocol.cpp.s
+.PHONY : src/myProtocol.cpp.s
 
 tcpSocket/tcpClient.o: tcpSocket/tcpClient.cpp.o
 .PHONY : tcpSocket/tcpClient.o
@@ -257,9 +281,12 @@ help:
 	@echo "... protobuf/cekong.pb.o"
 	@echo "... protobuf/cekong.pb.i"
 	@echo "... protobuf/cekong.pb.s"
-	@echo "... src/MyProtocol.o"
-	@echo "... src/MyProtocol.i"
-	@echo "... src/MyProtocol.s"
+	@echo "... src/MessageManager.o"
+	@echo "... src/MessageManager.i"
+	@echo "... src/MessageManager.s"
+	@echo "... src/myProtocol.o"
+	@echo "... src/myProtocol.i"
+	@echo "... src/myProtocol.s"
 	@echo "... tcpSocket/tcpClient.o"
 	@echo "... tcpSocket/tcpClient.i"
 	@echo "... tcpSocket/tcpClient.s"
