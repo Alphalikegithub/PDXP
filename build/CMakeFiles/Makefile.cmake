@@ -12,7 +12,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.5/CMakeSystem.cmake"
   "/root/PDXP/pdxpProtocal/CMakeLists.txt"
   "/root/PDXP/pdxpProtocal/MyProtocol/CMakeLists.txt"
-  "/root/PDXP/pdxpProtocal/bigCheck/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -43,12 +42,10 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "bigCheck/CMakeFiles/CMakeDirectoryInformation.cmake"
   "MyProtocol/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "bigCheck/CMakeFiles/bigCheck.dir/DependInfo.cmake"
   "MyProtocol/CMakeFiles/MyProtocol.dir/DependInfo.cmake"
   )

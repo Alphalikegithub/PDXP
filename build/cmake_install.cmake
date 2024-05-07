@@ -39,7 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/PDXP/build/bigCheck/cmake_install.cmake")
   include("/root/PDXP/build/MyProtocol/cmake_install.cmake")
 
 endif()

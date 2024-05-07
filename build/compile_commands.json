@@ -1,10 +1,5 @@
 [
 {
-  "directory": "/root/PDXP/build/bigCheck",
-  "command": "/usr/bin/g++   -I/root/PDXP/pdxpProtocal/bigCheck  -g   -o CMakeFiles/bigCheck.dir/bigCheck.cpp.o -c /root/PDXP/pdxpProtocal/bigCheck/bigCheck.cpp",
-  "file": "/root/PDXP/pdxpProtocal/bigCheck/bigCheck.cpp"
-},
-{
   "directory": "/root/PDXP/build/MyProtocol",
   "command": "/usr/bin/g++   -I/root/PDXP/pdxpProtocal/MyProtocol  -g   -o CMakeFiles/MyProtocol.dir/MyProtocol.cpp.o -c /root/PDXP/pdxpProtocal/MyProtocol/MyProtocol.cpp",
   "file": "/root/PDXP/pdxpProtocal/MyProtocol/MyProtocol.cpp"

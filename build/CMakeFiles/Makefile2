@@ -53,19 +53,16 @@ CMAKE_BINARY_DIR = /root/PDXP/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: bigCheck/all
 all: MyProtocol/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: bigCheck/preinstall
 preinstall: MyProtocol/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: bigCheck/clean
 clean: MyProtocol/clean
 
 .PHONY : clean
@@ -87,51 +84,6 @@ MyProtocol/preinstall:
 MyProtocol/clean: MyProtocol/CMakeFiles/MyProtocol.dir/clean
 
 .PHONY : MyProtocol/clean
-
-#=============================================================================
-# Directory level rules for directory bigCheck
-
-# Recursive "all" directory target.
-bigCheck/all: bigCheck/CMakeFiles/bigCheck.dir/all
-
-.PHONY : bigCheck/all
-
-# Recursive "preinstall" directory target.
-bigCheck/preinstall:
-
-.PHONY : bigCheck/preinstall
-
-# Recursive "clean" directory target.
-bigCheck/clean: bigCheck/CMakeFiles/bigCheck.dir/clean
-
-.PHONY : bigCheck/clean
-
-#=============================================================================
-# Target rules for target bigCheck/CMakeFiles/bigCheck.dir
-
-# All Build rule for target.
-bigCheck/CMakeFiles/bigCheck.dir/all:
-	$(MAKE) -f bigCheck/CMakeFiles/bigCheck.dir/build.make bigCheck/CMakeFiles/bigCheck.dir/depend
-	$(MAKE) -f bigCheck/CMakeFiles/bigCheck.dir/build.make bigCheck/CMakeFiles/bigCheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/PDXP/build/CMakeFiles --progress-num=4,5 "Built target bigCheck"
-.PHONY : bigCheck/CMakeFiles/bigCheck.dir/all
-
-# Build rule for subdir invocation for target.
-bigCheck/CMakeFiles/bigCheck.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/PDXP/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 bigCheck/CMakeFiles/bigCheck.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/PDXP/build/CMakeFiles 0
-.PHONY : bigCheck/CMakeFiles/bigCheck.dir/rule
-
-# Convenience name for target.
-bigCheck: bigCheck/CMakeFiles/bigCheck.dir/rule
-
-.PHONY : bigCheck
-
-# clean rule for target.
-bigCheck/CMakeFiles/bigCheck.dir/clean:
-	$(MAKE) -f bigCheck/CMakeFiles/bigCheck.dir/build.make bigCheck/CMakeFiles/bigCheck.dir/clean
-.PHONY : bigCheck/CMakeFiles/bigCheck.dir/clean
 
 #=============================================================================
 # Target rules for target MyProtocol/CMakeFiles/MyProtocol.dir

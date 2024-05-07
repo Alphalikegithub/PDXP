@@ -132,9 +132,6 @@
 			"path" : "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
-			"path" : "bigCheck/CMakeLists.txt"
-		},
-		{
 			"path" : "MyProtocol/CMakeLists.txt"
 		}
 	],

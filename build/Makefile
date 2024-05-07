@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named bigCheck
-
-# Build rule for target.
-bigCheck: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bigCheck
-.PHONY : bigCheck
-
-# fast build rule for target.
-bigCheck/fast:
-	$(MAKE) -f bigCheck/CMakeFiles/bigCheck.dir/build.make bigCheck/CMakeFiles/bigCheck.dir/build
-.PHONY : bigCheck/fast
-
-#=============================================================================
 # Target rules for targets named MyProtocol
 
 # Build rule for target.
@@ -144,7 +131,6 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... bigCheck"
 	@echo "... MyProtocol"
 .PHONY : help
 
