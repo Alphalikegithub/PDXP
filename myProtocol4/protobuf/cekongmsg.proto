@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message MyMessageBody {
-  // 定义与你的 JSON 对象相对应的字段
-  string op = 1;
-  string key = 2;
-  string value = 3;
-}

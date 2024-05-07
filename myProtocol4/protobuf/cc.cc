@@ -1,5 +1,5 @@
 #include <iostream>
-#include "my_message.pb.h"  // 包含你的 Protocol Buffers 文件
+#include "cekong.pb.h"  // 包含你的 Protocol Buffers 文件
 
 int main() {
     MyMessageBody message;
