@@ -1,5 +1,13 @@
 // MessageManager.cpp
 #include "MessageManager.h"
+#include <chrono>
+
+// 获取当前时间戳（秒）
+long getCurrentTimestamp() {
+    auto currentTime = std::chrono::system_clock::now();
+    return std::chrono::duration_cast<std::chrono::seconds>(currentTime.time_since_epoch()).count();
+}
+
 
 void MessageManager::createAndAddMessages(std::queue<MyProtoMsg>& msgQueue, int numMessages) {
     std::random_device rd;  // 随机数种子
@@ -34,7 +42,7 @@ void MessageManager::createAndAddMessages(std::queue<MyProtoMsg>& msgQueue, int 
         /* 当前时间戳: 1715096190 秒
            当前年月日时分秒: 2024-05-07 23:36:30 */
         // 随机生成消息体字段
-        msg.body.set_current_time(i + 1715096190); // 当前时刻
+        msg.body.set_current_time(getCurrentTimestamp() + i); // 当前时刻
         /* *******************设备状态单独设置***************** */
         int randomIndex = distribution(gen) % deviceStatusValues.size(); // 生成随机索引
         std::string randomStatus = deviceStatusValues[randomIndex]; // 获取随机设备状态

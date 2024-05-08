@@ -1,23 +1,23 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cb264/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cb264.dir/build.make CMakeFiles/cmTC_cb264.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c13a0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c13a0.dir/build.make CMakeFiles/cmTC_c13a0.dir/build
 gmake[1]: Entering directory `/root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cb264.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_cb264.dir/src.c.o -c /root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_cb264
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb264.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_cb264.dir/src.c.o -o cmTC_cb264 
-CMakeFiles/cmTC_cb264.dir/src.c.o: In function `main':
+Building C object CMakeFiles/cmTC_c13a0.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c13a0.dir/src.c.o -c /root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c13a0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c13a0.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_c13a0.dir/src.c.o -o cmTC_c13a0 
+CMakeFiles/cmTC_c13a0.dir/src.c.o: In function `main':
 src.c:(.text+0x2d): undefined reference to `pthread_create'
 src.c:(.text+0x39): undefined reference to `pthread_detach'
 src.c:(.text+0x45): undefined reference to `pthread_cancel'
 src.c:(.text+0x56): undefined reference to `pthread_join'
 src.c:(.text+0x6a): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_cb264] Error 1
+gmake[1]: *** [cmTC_c13a0] Error 1
 gmake[1]: Leaving directory `/root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_cb264/fast] Error 2
+gmake: *** [cmTC_c13a0/fast] Error 2
 
 
 Source file was:
@@ -44,18 +44,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_99349/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_99349.dir/build.make CMakeFiles/cmTC_99349.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ceac4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ceac4.dir/build.make CMakeFiles/cmTC_ceac4.dir/build
 gmake[1]: Entering directory `/root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_99349.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_99349.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_99349
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99349.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_99349.dir/CheckFunctionExists.c.o -o cmTC_99349  -lpthreads 
+Building C object CMakeFiles/cmTC_ceac4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_ceac4.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ceac4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ceac4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_ceac4.dir/CheckFunctionExists.c.o -o cmTC_ceac4  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_99349] Error 1
+gmake[1]: *** [cmTC_ceac4] Error 1
 gmake[1]: Leaving directory `/root/code/PDXP/myProtocol9/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_99349/fast] Error 2
+gmake: *** [cmTC_ceac4/fast] Error 2
 
 
 
