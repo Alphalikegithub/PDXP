@@ -73,43 +73,43 @@ CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o: CMakeFiles/server.dir/flags.mak
 CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o: ../tcpSocket/tcpServer.cpp
 CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o -MF CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o.d -o CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o -c /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o -MF CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o.d -o CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.o -c /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp
 
 CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp > CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp > CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.i
 
 CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp -o CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/tcpSocket/tcpServer.cpp -o CMakeFiles/server.dir/tcpSocket/tcpServer.cpp.s
 
 CMakeFiles/server.dir/src/myProtocol.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/myProtocol.cpp.o: ../src/myProtocol.cpp
 CMakeFiles/server.dir/src/myProtocol.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/myProtocol.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/myProtocol.cpp.o -MF CMakeFiles/server.dir/src/myProtocol.cpp.o.d -o CMakeFiles/server.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol9/src/myProtocol.cpp
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/myProtocol.cpp.o -MF CMakeFiles/server.dir/src/myProtocol.cpp.o.d -o CMakeFiles/server.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol9/src/myProtocol.cpp
 
 CMakeFiles/server.dir/src/myProtocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/myProtocol.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/myProtocol.cpp > CMakeFiles/server.dir/src/myProtocol.cpp.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/myProtocol.cpp > CMakeFiles/server.dir/src/myProtocol.cpp.i
 
 CMakeFiles/server.dir/src/myProtocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/myProtocol.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/myProtocol.cpp -o CMakeFiles/server.dir/src/myProtocol.cpp.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/myProtocol.cpp -o CMakeFiles/server.dir/src/myProtocol.cpp.s
 
 CMakeFiles/server.dir/protobuf/cekong.pb.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/protobuf/cekong.pb.cc.o: ../protobuf/cekong.pb.cc
 CMakeFiles/server.dir/protobuf/cekong.pb.cc.o: CMakeFiles/server.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/protobuf/cekong.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/server.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/server.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/server.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/server.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc
 
 CMakeFiles/server.dir/protobuf/cekong.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/protobuf/cekong.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc > CMakeFiles/server.dir/protobuf/cekong.pb.cc.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc > CMakeFiles/server.dir/protobuf/cekong.pb.cc.i
 
 CMakeFiles/server.dir/protobuf/cekong.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/protobuf/cekong.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc -o CMakeFiles/server.dir/protobuf/cekong.pb.cc.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc -o CMakeFiles/server.dir/protobuf/cekong.pb.cc.s
 
 # Object files for target server
 server_OBJECTS = \

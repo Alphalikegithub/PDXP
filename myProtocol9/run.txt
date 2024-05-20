@@ -23,5 +23,5 @@
 第二步：进入/root/code/PDXP/myProtocol5/src，
 先执行 g++ ../tcpSocket/tcpServer.cpp ./MyProtocol.cpp ../protobuf/cekong.pb.cc -I ./ -o sever -lprotobuf -std=c++11
 后执行 g++ ../tcpSocket/tcpClient.cpp ./MyProtocol.cpp ../protobuf/cekong.pb.cc -I ./ -o client -lprotobuf -std=c++11
-再运行./sever 127.0.0.1 8080和./client 127.0.0.1 8080
+再运行./server 127.0.0.1 8080和./client 127.0.0.1 8080
 

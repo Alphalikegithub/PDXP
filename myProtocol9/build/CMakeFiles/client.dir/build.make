@@ -73,57 +73,57 @@ CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: CMakeFiles/client.dir/flags.mak
 CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: ../tcpSocket/tcpClient.cpp
 CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -MF CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o.d -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -c /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -MF CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o.d -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.o -c /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp
 
 CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp > CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp > CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.i
 
 CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/tcpSocket/tcpClient.cpp -o CMakeFiles/client.dir/tcpSocket/tcpClient.cpp.s
 
 CMakeFiles/client.dir/src/MessageManager.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/MessageManager.cpp.o: ../src/MessageManager.cpp
 CMakeFiles/client.dir/src/MessageManager.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/MessageManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/MessageManager.cpp.o -MF CMakeFiles/client.dir/src/MessageManager.cpp.o.d -o CMakeFiles/client.dir/src/MessageManager.cpp.o -c /root/code/PDXP/myProtocol9/src/MessageManager.cpp
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/MessageManager.cpp.o -MF CMakeFiles/client.dir/src/MessageManager.cpp.o.d -o CMakeFiles/client.dir/src/MessageManager.cpp.o -c /root/code/PDXP/myProtocol9/src/MessageManager.cpp
 
 CMakeFiles/client.dir/src/MessageManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/MessageManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/MessageManager.cpp > CMakeFiles/client.dir/src/MessageManager.cpp.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/MessageManager.cpp > CMakeFiles/client.dir/src/MessageManager.cpp.i
 
 CMakeFiles/client.dir/src/MessageManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/MessageManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/MessageManager.cpp -o CMakeFiles/client.dir/src/MessageManager.cpp.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/MessageManager.cpp -o CMakeFiles/client.dir/src/MessageManager.cpp.s
 
 CMakeFiles/client.dir/src/myProtocol.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/myProtocol.cpp.o: ../src/myProtocol.cpp
 CMakeFiles/client.dir/src/myProtocol.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/src/myProtocol.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/myProtocol.cpp.o -MF CMakeFiles/client.dir/src/myProtocol.cpp.o.d -o CMakeFiles/client.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol9/src/myProtocol.cpp
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/myProtocol.cpp.o -MF CMakeFiles/client.dir/src/myProtocol.cpp.o.d -o CMakeFiles/client.dir/src/myProtocol.cpp.o -c /root/code/PDXP/myProtocol9/src/myProtocol.cpp
 
 CMakeFiles/client.dir/src/myProtocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/myProtocol.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/myProtocol.cpp > CMakeFiles/client.dir/src/myProtocol.cpp.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/src/myProtocol.cpp > CMakeFiles/client.dir/src/myProtocol.cpp.i
 
 CMakeFiles/client.dir/src/myProtocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/myProtocol.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/myProtocol.cpp -o CMakeFiles/client.dir/src/myProtocol.cpp.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/src/myProtocol.cpp -o CMakeFiles/client.dir/src/myProtocol.cpp.s
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: ../protobuf/cekong.pb.cc
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.o: CMakeFiles/client.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/PDXP/myProtocol9/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/client.dir/protobuf/cekong.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/client.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -MF CMakeFiles/client.dir/protobuf/cekong.pb.cc.o.d -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.o -c /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/protobuf/cekong.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc > CMakeFiles/client.dir/protobuf/cekong.pb.cc.i
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc > CMakeFiles/client.dir/protobuf/cekong.pb.cc.i
 
 CMakeFiles/client.dir/protobuf/cekong.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/protobuf/cekong.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.s
+	/opt/rh/devtoolset-11/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/PDXP/myProtocol9/protobuf/cekong.pb.cc -o CMakeFiles/client.dir/protobuf/cekong.pb.cc.s
 
 # Object files for target client
 client_OBJECTS = \

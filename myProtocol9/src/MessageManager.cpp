@@ -1,6 +1,7 @@
 // MessageManager.cpp
 #include "MessageManager.h"
 #include <chrono>
+#include <bits/stdc++.h>
 
 // 获取当前时间戳（秒）
 long getCurrentTimestamp() {
