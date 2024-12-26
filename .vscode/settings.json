@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "/root/PDXP/pdxpProtocal",
+    "cmake.sourceDirectory": "/home/user/code/PDXP/myProtocol4",
     "files.associations": {
         "*.tcc": "cpp",
         "system_error": "cpp",
@@ -41,6 +41,7 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "*.inc": "cpp"
     }
 }

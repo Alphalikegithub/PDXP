@@ -21,7 +21,7 @@
 现在运行程序需要执行的命令为：
 第一步：在/root/code/PDXP/myProtocol5/protobuf目录下执行protoc -I=./ --cpp_out=./ ./cekong.proto 
 第二步：进入/root/code/PDXP/myProtocol5/src，
-先执行 g++ ../tcpSocket/tcpServer.cpp ./MyProtocol.cpp ../protobuf/cekong.pb.cc -I ./ -o sever -lprotobuf -std=c++11
-后执行 g++ ../tcpSocket/tcpClient.cpp ./MyProtocol.cpp ../protobuf/cekong.pb.cc -I ./ -o client -lprotobuf -std=c++11
+先执行 g++ ../tcpSocket/udpServer.cpp ./myProtocol.cpp ../protobuf/cekong.pb.cc  -o sever -lprotobuf -std=c++11
+后执行 g++ ../tcpSocket/udpClient.cpp ./myProtocol.cpp ../protobuf/cekong.pb.cc ../src/MessageManager.cpp -o client -lprotobuf -std=c++11
 再运行./sever 127.0.0.1 8080和./client 127.0.0.1 8080
 
